@@ -10,7 +10,7 @@ import DiaryComponent from '../Components/DiaryComponent';
 const Dashboard = () => {
     return ( 
         <>
-        <h1>Dashboard</h1>
+        <h1>BreakTime</h1>
         <BreaksComponent/>
         <ConsumptionComponent/>
         <DiaryComponent/>
