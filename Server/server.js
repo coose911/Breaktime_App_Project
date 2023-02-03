@@ -13,7 +13,10 @@ MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
     const db = client.db('BreakTime');
     const diaryEntriesCollection = db.collection('diary_entries');
     const diaryEntriesRouter = createRouter(diaryEntriesCollection);
-    app.use('/api/diaryEntries', diaryEntriesRouter);
+    app.use('/api/diary_entries', diaryEntriesRouter);
+    const recordsCollection = db.collection('records');
+    const recordsRouter = createRouter(recordsCollection);
+    app.use('/api/records', recordsRouter);
   })
   .catch(console.err);
 
