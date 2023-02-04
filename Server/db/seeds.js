@@ -10,8 +10,7 @@ db.diary_entries.insertMany([
         entryThoughts: "mondays suck and i love lasagne",
         date: "1-02-22",
         time: "18:34"
-    },
-    {
+    },{
         title: "My head hurts",
         entryThoughts: "sandwiches really just dont hit the same wihtout a big glass of lovely beer",
         date: "1-02-22",
