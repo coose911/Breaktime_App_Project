@@ -14,8 +14,8 @@ const ConsumptionComponent = ({waterDrank, coffeeDrank}) => {
                 <button /* onClick={onClickWater} */>+ COFFEE</button>
                 <button /* onClick={onClickCoffee} */>+ WATER</button>
                 <ul>
-                    <li>Bar showing water drank</li>
-                    <li>Bar showing coffee drank</li>
+                    <li>Water drank: (value here) - Will be a bar showing water drank</li>
+                    <li>Coffee drank: (value here) - Will be a bar showing coffee drank</li>
                 </ul>
         </Bubble>
     )

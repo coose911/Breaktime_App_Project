@@ -34,7 +34,7 @@ const BreaksComponent = ({breaksTaken, breakLength}) => {
             <br/>
             <br/>
             <ul>
-                <li>Bar showing breaks taken</li>
+            <li>Breaks Taken: (value here) - Will be a bar showing breaks taken</li>
             </ul>
         </Bubble>
     )
