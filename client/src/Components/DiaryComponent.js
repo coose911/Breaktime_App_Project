@@ -9,6 +9,10 @@ const TextInput = styled.input`
     height: 150px;
     width: 300px;
 `
+const LastEntry = styled.ul`
+    border: gray solid 2px;
+    border-radius: 20px;
+`
 
 // Props = diaryEntries state
 const DiaryComponent = ({diaryEntries, addDiaryEntry}) => {
@@ -38,6 +42,12 @@ const DiaryComponent = ({diaryEntries, addDiaryEntry}) => {
         setDiaryEntries(updatedDairy)
     } */
 
+    // Filtering to find the most recent diary entry, then mapping to show it in a list
+    // const mostRecentDiaryEntry = diaryEntries.filter(entry, index => index === 0);
+    // const entryToDisplay = mostRecentDiaryEntry.map((entry) => {
+    //     return <li>{entry.text}</li>
+    // })
+
     return (
         <Bubble>
         <h2>Daily Thoughts & Feelings</h2>
@@ -54,9 +64,10 @@ const DiaryComponent = ({diaryEntries, addDiaryEntry}) => {
                 value="Post"
                 />
         </form>
-            <ul>
-                <li>Box showing latest comment</li>
-            </ul>
+            <LastEntry>
+                <li>Last entry here</li>
+                {/* {entryToDisplay} */}
+            </LastEntry>
         </Bubble>
     )
 }
