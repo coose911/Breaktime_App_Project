@@ -13,7 +13,7 @@ const NavBar = () => {
 
     return (
         <>
-            
+            <div>
                 <Link classname="home-button" to='/'>
                     <FontAwesomeIcon icon={faHouse} color='black'/>
                 </Link>
@@ -23,7 +23,7 @@ const NavBar = () => {
                 <Link classname="diary-button" to='/diary'>
                     <FontAwesomeIcon icon={faChartSimple} color='black'/>
                 </Link>
-            
+            </div>
         </>
     );
 }
