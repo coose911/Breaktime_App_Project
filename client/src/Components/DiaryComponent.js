@@ -14,8 +14,8 @@ const LastEntry = styled.ul`
     border-radius: 20px;
 `
 
-// Props = diaryEntries state
-const DiaryComponent = ({diaryEntries, addDiaryEntry}) => {
+// Props = diaryEntries state & addEntry function (below, needs to be moved)
+const DiaryComponent = ({diaryEntries, addEntry}) => {
 
     // State for diary entry input text box:
     const [textInput, setTextInput] = useState ("")
