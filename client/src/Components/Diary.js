@@ -5,14 +5,15 @@ import React from 'react'
 const Diary = (diaryEntries) => {
 
     // Mapping to show full array of diary entries (NEED TO ADD IN KEYS/IDs HERE):
-    const showAllDiaryEntries = diaryEntries.map((entry) => (
-        <li key={entry._id} entry={entry}></li>
-    ))
+    // const showAllDiaryEntries = diaryEntries.map((entry) => (
+    //     <li key={entry._id} entry={entry}></li>
+    // ))
 
     return ( 
         <section>
             <h1>Diary</h1>
-            {showAllDiaryEntries}
+            <p>All diary entries shown in array below</p>
+            {/* {showAllDiaryEntries} */}
         </section>
     );
 }
