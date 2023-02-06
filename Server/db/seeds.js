@@ -22,3 +22,13 @@ db.diary_entries.insertMany([
         time: "07:16"
     }
 ])
+
+db.consumables_data.insertMany([
+    {
+        coffee: 0
+    },{
+        water: 0
+    },{
+        break: 0
+    }
+])
