@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { getConsumableData } from "../helpers/BreaksService";
+import react, {useState, useEffect} from "react"
 
 const Bubble = styled.section`
   border: #00aeae solid 5px;
@@ -12,22 +14,30 @@ const RadioButtonsContainer = styled.form`
 // Props = breaksTaken state & breakLength state
 const BreaksComponent = ({breaksTaken, addBreak}) => {
 
-let numberOfBreaks = 0
+  const [consumableData, setConsumableData] = useState([])
 
-  const saveBreakLength = (evt) => {
-    evt.preventDefault()
-    numberOfBreaks += 1
-    addBreak(numberOfBreaks)
+  useEffect (() => {
+  loadConsumableData()
+  },[]
+  )
+
+  const loadConsumableData = () => {
+    setConsumableData(getConsumableData())
+    // console.log(consumableData)
+  }
+
+  const addABreak = (evt) => {
+    addBreak()
   }
 
   return (
     <Bubble>
       <h2>Breaks Taken</h2>
-      <button /* onClick={onClick} */>+ BREAK</button>
+      <button onClick={addABreak}>+ BREAK</button>
 
       <br />
       <br />
-      <RadioButtonsContainer onSubmit={saveBreakLength}>
+      <RadioButtonsContainer>
         <legend>Select your preferred break length:</legend>
         <label>10 minutes</label>
         <input
@@ -52,7 +62,7 @@ let numberOfBreaks = 0
       <br />
       <br />
       <ul>
-        <li>Breaks Taken: (value here) - Will be a bar showing breaks taken</li>
+        <li>Breaks Taken: {breaksTaken} - Will be a bar showing breaks taken</li>
       </ul>
     </Bubble>
   );

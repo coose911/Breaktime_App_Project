@@ -46,7 +46,9 @@ const createRouter = function (collection) {
 
     // To update number of breaks
     router.put('/:id', (req, res) => {
-        data[req.params.id] = req.body;
+        const updatedBreaks = 
+        collection
+        .updateOne(_id, )
         res.json(data);
     });
 
