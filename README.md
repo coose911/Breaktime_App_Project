@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 cd server.js
 step 1
 npm start
@@ -19,7 +18,6 @@ npm start
 step 4 
 cd ../server
 npm install --save-dev cors
-=======
 
 
 ## AIM
@@ -43,4 +41,3 @@ The user will be able to:
 - fill in an image when drunk all the amount of waters.
 - delete diary entry
 - user can comment on old diary posts with new feelings
->>>>>>> 34e001cdcdae71870922a456f3c6630f8aec5dc6
