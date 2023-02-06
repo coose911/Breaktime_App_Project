@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
+import ConsumptionProgress from "./ConsumptionProgress";
 
 const Bubble = styled.section`
   border: #00aeae solid 5px;
@@ -30,12 +31,8 @@ const ConsumptionComponent = ({ waterDrank, coffeeDrank }) => {
       <h2>Water & Coffee Drunk</h2>
       <button onClick={increaseCoffee}>+ COFFEE</button>
       <button onClick={increaseWater}>+ WATER</button>
-      <ul>
-        <li>Water drank: {percentWater} - Will be a bar showing water drank</li>
-        <li>
-          Coffee drank: {percentCoffee} - Will be a bar showing coffee drank
-        </li>
-      </ul>
+      <ConsumptionProgress percent={percentWater} />
+      <ConsumptionProgress percent={percentCoffee} />
     </Bubble>
   );
 };
