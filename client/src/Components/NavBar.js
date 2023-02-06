@@ -10,13 +10,13 @@ const NavBar = () => {
     return (
         <>
             <div>
-                <Link className="home-button" to='/'>
+                <Link classname="home-button" to='/'>
                     <FontAwesomeIcon icon={faHouse} color='black'/>
                 </Link>
-                <Link className="diary-button" to='/diary'>
+                <Link classname="diary-button" to='/diary'>
                     <FontAwesomeIcon icon={faBook} color='black'/>
                 </Link>
-                <Link className="graphs-button" to='/graphs'>
+                <Link classname="graph-button" to='/graphs'>
                     <FontAwesomeIcon icon={faChartSimple} color='black'/>
                 </Link>
             </div>
