@@ -16,7 +16,6 @@ const Dashboard = () => {
         <DiaryComponent/>
         <Graphs/>
         <Diary/>
-
         </>
     );
 }

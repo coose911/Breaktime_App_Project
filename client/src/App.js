@@ -10,7 +10,14 @@ function App() {
   return (
     <div className="App">
       <Dashboard/>
-
+      <Router>
+          <NavBar></NavBar>
+            <Routes>
+              <Route exact path='/' element = {<Dashboard/>} />
+              <Route exact path='/diary' element = {<Diary/>} />
+              <Route exact path='/graphs' element = {<Graphs/>} />
+            </Routes>
+      </Router>
     </div>
   );
 }
