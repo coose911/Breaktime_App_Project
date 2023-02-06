@@ -23,12 +23,20 @@ db.diary_entries.insertMany([
     }
 ])
 
-db.consumables_data.insertMany([
+db.coffees.insertMany([
     {
         coffee: 0
-    },{
+    }
+])
+
+db.waters.insertMany([
+    {
         water: 0
-    },{
+    }
+])
+
+db.breaks.insertMany([
+    {
         break: 0
     }
 ])

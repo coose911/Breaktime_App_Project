@@ -20,21 +20,20 @@ const BreaksComponent = ({breaksTaken, addBreak}) => {
 
   useEffect (() => {
   loadConsumableData()
-  getBreakID()
+  
   },[])
 
   const loadConsumableData = () => {
-    setConsumableData(getConsumableData())
-    // console.log(consumableData)
+    getConsumableData()
+    .then(res => setConsumableData(res))
+    getBreakID(consumableData)
   }
 
-  const getBreakID = (() => {
-    consumableData.map((name) => {
-      if (name === 'break'){
-        breakID = name._id
-        console.log(breakID)
-      }
-    })
+  const getBreakID = ((objects) => {
+    const keys = Object.keys(objects)
+    console.log(keys)
+    const breakObject = keys.filter(key => key === 'break')
+    console.log(breakObject)
   })
 
 

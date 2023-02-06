@@ -1,9 +1,8 @@
-const breakURL = 'http://localhost:9000/api/consumables_data/'
+const breakURL = 'http://localhost:9000/api/breaks/'
 
 export const getConsumableData = () => {
     return fetch(breakURL)
     .then(res => res.json())
-    .then(result => console.log(result))
 }
 
 export const getBreakData = (id) => {
