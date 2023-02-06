@@ -16,19 +16,32 @@ const BreaksComponent = ({breaksTaken, addBreak}) => {
 
   const [consumableData, setConsumableData] = useState([])
 
+  const breakID = ''
+
   useEffect (() => {
   loadConsumableData()
-  },[]
-  )
+  getBreakID()
+  },[])
 
   const loadConsumableData = () => {
     setConsumableData(getConsumableData())
     // console.log(consumableData)
   }
 
+  const getBreakID = (() => {
+    consumableData.map((name) => {
+      if (name === 'break'){
+        breakID = name._id
+        console.log(breakID)
+      }
+    })
+  })
+
+
   const addABreak = (evt) => {
     addBreak()
   }
+
 
   return (
     <Bubble>
@@ -63,6 +76,7 @@ const BreaksComponent = ({breaksTaken, addBreak}) => {
       <br />
       <ul>
         <li>Breaks Taken: {breaksTaken} - Will be a bar showing breaks taken</li>
+        {/* <li>break id: {consumableData[0]._id}</li> */}
       </ul>
     </Bubble>
   );
