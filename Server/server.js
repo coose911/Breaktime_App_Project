@@ -17,10 +17,17 @@ MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
     const diaryEntriesRouter = createRouter(diaryEntriesCollection);
     app.use('/api/diary_entries', diaryEntriesRouter);
 
-    const consumablesDataCollection = db.collection('consumables_data');
-    const consumablesDataRouter = createRouter(consumablesDataCollection);
-    app.use('/api/consumables_data', consumablesDataRouter);
-  
+    const coffeesDataCollection = db.collection('coffees');
+    const coffeesDataRouter = createRouter(coffeesDataCollection);
+    app.use('/api/coffees', coffeesDataRouter);
+    
+    const watersDataCollection = db.collection('waters');
+    const watersDataRouter = createRouter(watersDataCollection);
+    app.use('/api/waters', watersDataRouter);
+
+    const breaksDataCollection = db.collection('breaks');
+    const breaksDataRouter = createRouter(breaksDataCollection);
+    app.use('/api/breaks', breaksDataRouter);
   })
   .catch(console.err);
 

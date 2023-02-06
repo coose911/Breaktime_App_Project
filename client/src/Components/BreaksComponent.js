@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { getConsumableData } from "../helpers/BreaksService";
+import { getBreakData } from "../helpers/BreaksService";
 import react, {useState, useEffect} from "react"
+
 
 const Bubble = styled.section`
   border: #00aeae solid 5px;
@@ -14,31 +15,28 @@ const RadioButtonsContainer = styled.form`
 // Props = breaksTaken state & breakLength state
 const BreaksComponent = ({breaksTaken, addBreak}) => {
 
-  const [consumableData, setConsumableData] = useState([])
-
-  const breakID = ''
-
-  useEffect (() => {
-  loadConsumableData()
+  const [breakData, setBreakData] = useState([])
+  const [breakID, setBreakID] = useState('')
   
-  },[])
 
-  const loadConsumableData = () => {
-    getConsumableData()
-    .then(res => setConsumableData(res))
-    getBreakID(consumableData)
-  }
+  // useEffect (() => {
+  // loadBreakData()
+  // },[])
 
-  const getBreakID = ((objects) => {
-    const keys = Object.keys(objects)
-    console.log(keys)
-    const breakObject = keys.filter(key => key === 'break')
-    console.log(breakObject)
-  })
+  // const loadBreakData = () => {
+  //   getBreakData()
+  //   .then(res => {
+  //     setBreakData(res)
+  //   })
+  // }
 
 
   const addABreak = (evt) => {
     addBreak()
+    // setBreakID(breakData[0]._id)
+    // console.log(breakID)
+    // addBreak()
+
   }
 
 

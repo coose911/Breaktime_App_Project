@@ -21,9 +21,8 @@ function App() {
   }
 
   const addBreak = () => {
-    let breaks = breaksTaken += 1
-    setBreaksTaken(breaks)
-    putBreakData(breaks)
+    setBreaksTaken(breaksTaken + 1)
+    putBreakData(breaksTaken + 1)
   }
 
   return (

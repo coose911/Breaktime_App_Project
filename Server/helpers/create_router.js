@@ -45,11 +45,11 @@ const createRouter = function (collection) {
     })
 
     // To update number of breaks
-    router.put('/:id', (req, res) => {
-        const updatedBreaks = 
+    router.put('/', (req, res) => {
+        const updatedBreaks = req.body
         collection
-        .updateOne(_id, )
-        res.json(data);
+        .updateOne(breaks, updatedBreaks)
+        res.json(collection);
     });
 
     return router;
