@@ -1,10 +1,21 @@
 // diary will have diary entries
 import React from 'react'
 
-const Diary = () => {
+// Props = diaryEntries state
+const Diary = (diaryEntries) => {
+
+    // Mapping to show full array of diary entries (NEED TO ADD IN KEYS/IDs HERE):
+    // const showAllDiaryEntries = diaryEntries.map((entry) => (
+    //     <li key={entry._id} entry={entry}></li>
+    // ))
+
     return ( 
-        <h1>Diary</h1>
-     );
+        <section>
+            <h1>Diary</h1>
+            <p>All diary entries shown in array below</p>
+            {/* {showAllDiaryEntries} */}
+        </section>
+    );
 }
- 
+
 export default Diary;
