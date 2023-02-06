@@ -5,7 +5,7 @@ const Bubble = styled.section`
     border: #00AEAE solid 5px;
     border-radius: 20px;
 `
-const entry = styled.input`
+const InputBox = styled.input`
     height: 150px;
     width: 300px;
 `
@@ -48,7 +48,7 @@ const DiaryComponent = ({diaryEntries, addEntry}) => {
         <h2>Daily Thoughts & Feelings</h2>
 
         <form onSubmit={handleFormSubmit} >
-            <input 
+            <InputBox 
                 type="text"
                 placeholder="How do you feel today?"
                  value={entry} 
