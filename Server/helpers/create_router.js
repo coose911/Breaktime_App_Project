@@ -44,6 +44,11 @@ const createRouter = function (collection) {
         })
     })
 
+    // To update number of breaks
+    router.put('/:id', (req, res) => {
+        data[req.params.id] = req.body;
+        res.json(data);
+    });
 
     return router;
 }

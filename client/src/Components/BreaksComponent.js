@@ -10,7 +10,16 @@ const RadioButtonsContainer = styled.form`
 `;
 
 // Props = breaksTaken state & breakLength state
-const BreaksComponent = ({ breaksTaken, breakLength }) => {
+const BreaksComponent = ({breaksTaken, addBreak}) => {
+
+let numberOfBreaks = 0
+
+  const saveBreakLength = (evt) => {
+    evt.preventDefault()
+    numberOfBreaks += 1
+    addBreak(numberOfBreaks)
+  }
+
   return (
     <Bubble>
       <h2>Breaks Taken</h2>
@@ -18,7 +27,7 @@ const BreaksComponent = ({ breaksTaken, breakLength }) => {
 
       <br />
       <br />
-      <RadioButtonsContainer /* onSubmit={saveBreakLength} */>
+      <RadioButtonsContainer onSubmit={saveBreakLength}>
         <legend>Select your preferred break length:</legend>
         <label>10 minutes</label>
         <input

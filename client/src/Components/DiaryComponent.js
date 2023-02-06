@@ -52,8 +52,8 @@ const DiaryComponent = ({diaryEntries, addEntry}) => {
             <InputBox 
                 type="text"
                 placeholder="How do you feel today?"
-                 value={entry} 
-                 onChange={handleTextChange} 
+                value={entry} 
+                onChange={handleTextChange} 
                 />
             <input
                 type="submit"

@@ -8,14 +8,14 @@ import DiaryComponent from '../Components/DiaryComponent';
 
 
 
-const Dashboard = ({addEntry}) => {
+const Dashboard = ({addEntry, breaksTaken, addBreak}) => {
 
 
 
     return ( 
         <>
         <h1>BreakTime</h1>
-        <BreaksComponent/>
+        <BreaksComponent breaksTaken={breaksTaken} addBreak={addBreak}/>
         <ConsumptionComponent/>
         <DiaryComponent addEntry={addEntry}/>
         <Graphs/>

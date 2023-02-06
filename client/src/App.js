@@ -14,6 +14,7 @@ import { postDiaryEntry } from './helpers/DiaryService';
 function App() {
 
   const [diaryEntry, setDiaryEntry] = useState('')
+  const [breaksTaken, setBreaksTaken] = useState(0)
 
   const addEntry = (submittedDiaryEntry) => {
     setDiaryEntry(submittedDiaryEntry)
@@ -21,12 +22,17 @@ function App() {
     // setDiaryEntry('')
   }
 
+  const addBreak = (selectedBreakLength) => {
+    setBreaksTaken(selectedBreakLength)
+    updateBreaksTaken(selectedBreakLength)
+  }
+
   return (
     <div className="App">
       <Router>
           <NavBar></NavBar>
             <Routes>
-              <Route exact path='/' element = {<Dashboard addEntry={addEntry}/>} />
+              <Route exact path='/' element = {<Dashboard addEntry={addEntry} breaksTaken={breaksTaken} addBreak={addBreak}/>} />
               <Route exact path='/diary' element = {<Diary/>} />
               <Route exact path='/graphs' element = {<Graphs/>} />
             </Routes>
