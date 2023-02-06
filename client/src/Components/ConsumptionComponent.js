@@ -29,8 +29,12 @@ const ConsumptionComponent = ({ waterDrank, coffeeDrank }) => {
   return (
     <Bubble>
       <h2>Water & Coffee Drunk</h2>
-      <button onClick={increaseCoffee}>+ COFFEE</button>
-      <button onClick={increaseWater}>+ WATER</button>
+      <button id="coffee-button" onClick={increaseCoffee}>
+        + COFFEE
+      </button>
+      <button id="water-button" onClick={increaseWater}>
+        + WATER
+      </button>
       <ConsumptionProgress percent={percentWater} />
       <ConsumptionProgress percent={percentCoffee} />
     </Bubble>
