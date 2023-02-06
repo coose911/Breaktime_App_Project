@@ -8,9 +8,6 @@ const Dashboard = () => {
     return ( 
         <>
         <h1>Dashborad</h1>
-        <Graphs/>
-        <Diary/>
-
         </>
     );
 }
