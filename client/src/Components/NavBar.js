@@ -7,20 +7,16 @@ const NavBar = () => {
 
 
 
-
-
-
-
     return (
         <>
             <div>
-                <Link classname="home-button" to='/'>
+                <Link className="home-button" to='/'>
                     <FontAwesomeIcon icon={faHouse} color='black'/>
                 </Link>
-                <Link classname="graph-button" to='/graphs'>
+                <Link className="diary-button" to='/diary'>
                     <FontAwesomeIcon icon={faBook} color='black'/>
                 </Link>
-                <Link classname="diary-button" to='/diary'>
+                <Link className="graphs-button" to='/graphs'>
                     <FontAwesomeIcon icon={faChartSimple} color='black'/>
                 </Link>
             </div>

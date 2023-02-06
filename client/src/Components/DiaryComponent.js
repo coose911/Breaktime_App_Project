@@ -5,7 +5,7 @@ const Bubble = styled.section`
     border: #00AEAE solid 5px;
     border-radius: 20px;
 `
-const TextInput = styled.input`
+const entry = styled.input`
     height: 150px;
     width: 300px;
 `
@@ -18,29 +18,24 @@ const LastEntry = styled.ul`
 const DiaryComponent = ({diaryEntries, addEntry}) => {
 
     // State for diary entry input text box:
-    const [textInput, setTextInput] = useState ("")
+    const [entry, setEntry] = useState ("")
 
     // To update the text as a diary entry is being typed:
     const handleTextChange = (evt) => {
-        setTextInput(evt.target.value)
+        // console.log(evt.target.value)
+        setEntry(evt.target.value)
     }
 
     // To handle the submission of a new entry:
-    // const handleFormSubmit = (evt) => {
-    //     evt.preventDefault()
-    //     const entryToSubmit = {
-    //         entry : {entryInput},
-    //     }
-    //     // addEntry lives in the same file as diary entry state and is passed down as a prop
-    //     addDiaryEntry(entryToSubmit)
-    //     setEntryInput("")
-    // }
+    const handleFormSubmit = (evt) => {
+        evt.preventDefault()
+        console.log(evt.target.value)
+        const entryToSubmit = {entry}
+        // addEntry lives in the same file as diary entry state and is passed down as a prop
+        addEntry(entryToSubmit)
+        setEntry("")
+    }
 
-    // This should be in the same place as the diary entry state and passed down as a prop:
-    /* const addEntry = (submittedDiaryEntry) => {
-        const updatedDiary = [...diaryEntries, submittedCDiaryEntry]
-        setDiaryEntries(updatedDairy)
-    } */
 
     // Filtering to find the most recent diary entry, then mapping to show it in a list
     // const mostRecentDiaryEntry = diaryEntries.filter(entry, index => index === 0);
@@ -52,12 +47,12 @@ const DiaryComponent = ({diaryEntries, addEntry}) => {
         <Bubble>
         <h2>Daily Thoughts & Feelings</h2>
 
-        <form /* onSubmit={handleFormSubmit} */>
-            <TextInput 
+        <form onSubmit={handleFormSubmit} >
+            <input 
                 type="text"
                 placeholder="How do you feel today?"
-                /* value={entryInput} */
-                /* onChange={handleTextChange} */
+                 value={entry} 
+                 onChange={handleTextChange} 
                 />
             <input
                 type="submit"

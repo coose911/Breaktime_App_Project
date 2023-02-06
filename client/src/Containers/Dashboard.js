@@ -7,13 +7,17 @@ import ConsumptionComponent from '../Components/ConsumptionComponent';
 import DiaryComponent from '../Components/DiaryComponent';
 
 
-const Dashboard = () => {
+
+const Dashboard = ({addEntry}) => {
+
+
+
     return ( 
         <>
         <h1>BreakTime</h1>
         <BreaksComponent/>
         <ConsumptionComponent/>
-        <DiaryComponent/>
+        <DiaryComponent addEntry={addEntry}/>
         <Graphs/>
         <Diary/>
         </>

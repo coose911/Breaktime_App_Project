@@ -1,7 +1,9 @@
 import React from 'react'
 
 const Graphs = () => {
-    return ( 
+    return (
+        
+        
         <h1>Graphs</h1>
      );
 }

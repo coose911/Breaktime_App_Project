@@ -30,6 +30,21 @@ const createRouter = function (collection) {
         })
     })
 
+    router.post('/', (req, res) =>{
+        const newData = req.body
+        collection
+        .insertOne(newData)
+        .then((results) =>{
+            res.json(results.ops[0])
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500);
+            res.json({ status: 500, error: err })
+        })
+    })
+
+
     return router;
 }
 
