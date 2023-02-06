@@ -19,6 +19,7 @@ const DiaryComponent = ({diaryEntries, addEntry}) => {
 
     // State for diary entry input text box:
     const [entry, setEntry] = useState ("")
+    const [postToShow, setPostToShow] = useState("")
 
     // To update the text as a diary entry is being typed:
     const handleTextChange = (evt) => {
@@ -29,10 +30,10 @@ const DiaryComponent = ({diaryEntries, addEntry}) => {
     // To handle the submission of a new entry:
     const handleFormSubmit = (evt) => {
         evt.preventDefault()
-        console.log(evt.target.value)
         const entryToSubmit = {entry}
         // addEntry lives in the same file as diary entry state and is passed down as a prop
         addEntry(entryToSubmit)
+        setPostToShow(entry)
         setEntry("")
     }
 
@@ -59,10 +60,7 @@ const DiaryComponent = ({diaryEntries, addEntry}) => {
                 value="Post"
                 />
         </form>
-            <LastEntry>
-                <li>Last entry here</li>
-                {/* {entryToDisplay} */}
-            </LastEntry>
+            <LastEntry> {postToShow} </LastEntry>
         </Bubble>
     )
 }
