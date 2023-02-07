@@ -1,6 +1,8 @@
 body {
   background: rgb(36,148,162);
   background: radial-gradient(circle, rgba(36,148,162,1) 40%, rgba(48,75,120,1) 100%);
+  margin: 0;
+  padding: 0;
 }
 
 .outer-container {
@@ -23,7 +25,9 @@ body {
 }
 
 #coffee-button,
-#water-button {
+#water-button,
+#break-button,
+#post-button{
   padding: 8px 15px;
   border-radius: 5px;
   border: none;

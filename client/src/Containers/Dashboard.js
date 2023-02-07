@@ -11,10 +11,11 @@ import styled from 'styled-components';
 
 const ImageContainer = styled.div`
     & > img {
-    width: 25%;
-    margin-left: 70%;
+    width: 35%;
+    margin-left: 60%;
     margin-top: -25em;
-    margin-bottom: -8em;
+    margin-bottom: -12em;
+    margin-right: 5em;
     height: 40%}
 `
 
@@ -26,7 +27,7 @@ const Dashboard = ({addEntry, breaksTaken, addBreak, addCoffee, addWater}) => {
     return ( 
         <>
         <ImageContainer>
-        <img src={Logo}/>
+            <img src={Logo}/>
         </ImageContainer>
         <BreaksComponent breaksTaken={breaksTaken} addBreak={addBreak}/>
         <ConsumptionComponent addCoffee={addCoffee} addWater={addWater}/>
