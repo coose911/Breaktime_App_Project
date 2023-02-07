@@ -15,8 +15,6 @@ function App() {
 
   const [diaryEntry, setDiaryEntry] = useState('')
   
-
-  
   const addEntry = (submittedDiaryEntry) => {
     setDiaryEntry(submittedDiaryEntry)
     postDiaryEntry(submittedDiaryEntry)

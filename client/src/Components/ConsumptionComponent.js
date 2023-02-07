@@ -48,7 +48,7 @@ const ConsumptionComponent = ({ waterDrank, coffeeDrank, addWater, addCoffee }) 
 
   return (
     <Bubble>
-      <h2>Water & Coffee Drunk</h2>
+      <h2>Coffee & Water Drunk</h2>
       <button id="coffee-button" onClick={increaseCoffee}>
         <FontAwesomeIcon icon={faCoffee}/>
       </button>

@@ -1,19 +1,26 @@
-// diary will have diary entries
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import DiaryEntry from './DiaryEntry';
+import { getDiaryEntries } from '../helpers/DiaryService';
 
-// Props = diaryEntries state
-const Diary = (diaryEntries) => {
+const Diary = () => {
 
-    // Mapping to show full array of diary entries (NEED TO ADD IN KEYS/IDs HERE):
-    // const showAllDiaryEntries = diaryEntries.map((entry) => (
-    //     <li key={entry._id} entry={entry}></li>
-    // ))
+    const [diaryEntries, setDiaryEntries] = useState([])
+
+    useEffect(()=> {
+        getDiaryEntries()
+        .then(res => setDiaryEntries(res))
+    },[])
+
+    const showAllDiaryEntries = diaryEntries.map((entry) => (
+        <DiaryEntry key={entry._id} entry={entry}></DiaryEntry>
+    ))
 
     return ( 
         <section>
             <h1>Diary</h1>
-            <p>All diary entries shown in array below</p>
-            {/* {showAllDiaryEntries} */}
+            <ul>
+                {showAllDiaryEntries}
+            </ul>
         </section>
     );
 }

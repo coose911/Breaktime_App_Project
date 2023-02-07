@@ -64,12 +64,6 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
       <br />
       <br />
       <BreaksProgress percent={percentBreak} />
-      <ul>
-        <li>
-          Breaks Taken: {breaksTaken} - Will be a bar showing breaks taken
-        </li>
-        {/* <li>break id: {consumableData[0]._id}</li> */}
-      </ul>
     </Bubble>
   );
 };
