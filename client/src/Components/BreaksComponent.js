@@ -16,26 +16,19 @@ const RadioButtonsContainer = styled.form`
 const BreaksComponent = ({ breaksTaken, addBreak }) => {
   const [breakData, setBreakData] = useState([]);
   const [breakID, setBreakID] = useState("");
+  const [percentBreak, setPercentBreak] = useState(0);
 
-  // useEffect (() => {
-  // loadBreakData()
-  // },[])
-
-  // const loadBreakData = () => {
-  //   getBreakData()
-  //   .then(res => {
-  //     setBreakData(res)
-  //   })
-  // }
+  const increaseBreakPercent = () => {
+    if (percentBreak + 10 > 100) return;
+    setPercentBreak(percentBreak + 10);
+  };
 
   const addABreak = (evt) => {
+    increaseBreakPercent();
     const date = new Date();
     const time =
       date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     addBreak(time);
-    // setBreakID(breakData[0]._id)
-    // console.log(breakID)
-    // addBreak()
   };
 
   return (
@@ -69,8 +62,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
 
       <br />
       <br />
-      <button>+Breaks</button>
-      <BreaksProgress />
+      <BreaksProgress percent={percentBreak} />
       <ul>
         <li>
           Breaks Taken: {breaksTaken} - Will be a bar showing breaks taken
