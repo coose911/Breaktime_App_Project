@@ -6,6 +6,8 @@ import { faBottleWater, faCoffee, faWater } from "@fortawesome/free-solid-svg-ic
 
 const Bubble = styled.section`
   margin-top: 3em;
+  margin-left: 1em;
+  margin-right: 1em;
   background-color: #144459;
   opacity: 0.9;
   border-radius: 20px;

@@ -9,6 +9,9 @@ const Bubble = styled.section`
     padding-bottom: 2em;
     padding-right: 2em;
     margin-top: 3em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 5em;
     background-color: #144459;
     opacity: 0.9;
     border-radius: 20px;

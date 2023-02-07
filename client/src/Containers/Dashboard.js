@@ -5,7 +5,7 @@ import NavBar from '../Components/NavBar';
 import BreaksComponent from '../Components/BreaksComponent';
 import ConsumptionComponent from '../Components/ConsumptionComponent';
 import DiaryComponent from '../Components/DiaryComponent';
-import Logo from '../images/transparent_breaktime_logo.png'
+import Logo from '../images/transparent_logo_yellow.png'
 import styled from 'styled-components';
 
 

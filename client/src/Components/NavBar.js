@@ -31,13 +31,13 @@ const NavBar = () => {
             <div>
                 <NavContainer>
                     <StyledLink  to='/'>
-                        <FontAwesomeIcon icon={faHouse} color='black'/>
+                        <FontAwesomeIcon icon={faHouse} color='#DBB13C'/>
                     </StyledLink>
                     <StyledLink to='/diary'>
-                        <FontAwesomeIcon icon={faBook} color='black'/>
+                        <FontAwesomeIcon icon={faBook} color='#DBB13C'/>
                     </StyledLink>
                     <StyledLink  to='/graphs'>
-                        <FontAwesomeIcon icon={faChartSimple} color='black'/>
+                        <FontAwesomeIcon icon={faChartSimple} color='#DBB13C'/>
                     </StyledLink>
                 </NavContainer>
             </div>

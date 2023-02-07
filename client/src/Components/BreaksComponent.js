@@ -9,6 +9,8 @@ import { faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
 
 const Bubble = styled.section`
   margin-top: 0em;
+  margin-left: 1em;
+  margin-right: 1em;
   background-color: #144459;
   opacity: 0.9;
   border-radius: 20px;
