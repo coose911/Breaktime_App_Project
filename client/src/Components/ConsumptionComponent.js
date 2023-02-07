@@ -5,8 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBottleWater, faCoffee, faWater } from "@fortawesome/free-solid-svg-icons";
 
 const Bubble = styled.section`
-  border: #00aeae solid 5px;
+  margin-top: 3em;
+  background-color: #144459;
+  /* opacity: 0.6; */
   border-radius: 20px;
+  color: antiquewhite;
 `;
 
 // Props = waterDrank state & coffeeDrank state

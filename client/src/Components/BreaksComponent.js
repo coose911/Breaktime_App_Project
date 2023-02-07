@@ -2,10 +2,15 @@ import styled from "styled-components";
 import { getBreakData } from "../helpers/BreaksService";
 import react, { useState, useEffect } from "react";
 import BreaksProgress from "./BreaksProgress";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock, faClockFour, faClockRotateLeft, faUserClock } from "@fortawesome/free-solid-svg-icons";
 
 const Bubble = styled.section`
-  border: #00aeae solid 5px;
+margin-top: -5em;
+  background-color: #144459;
+  /* opacity: 0.6; */
   border-radius: 20px;
+  color: antiquewhite;
 `;
 const RadioButtonsContainer = styled.form`
   border: gray solid 2px;
@@ -35,7 +40,9 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
   return (
     <Bubble>
       <h2>Breaks Taken</h2>
-      <button onClick={addABreak}>+ BREAK</button>
+      <button onClick={addABreak}>
+        <FontAwesomeIcon icon={faClockRotateLeft} />
+      </button>
 
       <br />
       <br />

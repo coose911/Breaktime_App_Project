@@ -2,8 +2,11 @@ import styled from 'styled-components'
 import React, {useState} from "react"
 
 const Bubble = styled.section`
-    border: #00AEAE solid 5px;
+    margin-top: 3em;
+    background-color: #144459;
+    /* opacity: 0.6; */
     border-radius: 20px;
+    color: antiquewhite;
 `
 const InputBox = styled.input`
     height: 150px;

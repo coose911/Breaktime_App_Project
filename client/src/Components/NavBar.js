@@ -16,7 +16,7 @@ const StyledLink = styled(Link)`
     width: 20px;
     border: 30em;
     font-size: 45px;
-    margin-top: 70px;
+    margin-top: 120px;
     margin-bottom: -120x;
 
 

@@ -1,5 +1,6 @@
 body {
-  margin: 10px;
+  background: rgb(36,148,162);
+  background: radial-gradient(circle, rgba(36,148,162,1) 40%, rgba(48,75,120,1) 100%);
 }
 
 .outer-container {
@@ -12,7 +13,7 @@ body {
 
 .inner-container {
   height: 100%;
-  background-color: #cb3d0d;
+  background-color: #DBB13C;
   width: var(--width);
   transition: width 0.5s ease;
   text-align: center;

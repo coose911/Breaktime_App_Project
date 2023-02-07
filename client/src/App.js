@@ -9,7 +9,16 @@ import { postDiaryEntry } from './helpers/DiaryService';
 import { postBreakData } from './helpers/BreaksService';
 import { postCoffeeData } from './helpers/CoffeeService';
 import { postWaterData } from './helpers/WaterService';
+import styled from 'styled-components';
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Hanken+Grotesk:wght@300&family=Quicksand&family=Source+Code+Pro&display=swap');
+</style>
 
+const AppContainer = styled.div`
+  font-family: 'Didact Gothic', sans-serif;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+`
 
 function App() {
 
@@ -35,6 +44,7 @@ function App() {
 
   return (
     <div className="App">
+      <AppContainer>
       <Router>
           <NavBar></NavBar>
             <Routes>
@@ -43,6 +53,7 @@ function App() {
               <Route exact path='/graphs' element = {<Graphs/>} />
             </Routes>
       </Router>
+      </AppContainer>
     </div>
   );
 }
