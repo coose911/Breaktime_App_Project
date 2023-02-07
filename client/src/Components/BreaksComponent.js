@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { getBreakData } from "../helpers/BreaksService";
-import react, {useState, useEffect} from "react"
-
+import react, { useState, useEffect } from "react";
+import BreaksProgress from "./BreaksProgress";
 
 const Bubble = styled.section`
   border: #00aeae solid 5px;
@@ -13,11 +13,9 @@ const RadioButtonsContainer = styled.form`
 `;
 
 // Props = breaksTaken state & breakLength state
-const BreaksComponent = ({breaksTaken, addBreak}) => {
-
-  const [breakData, setBreakData] = useState([])
-  const [breakID, setBreakID] = useState('')
-  
+const BreaksComponent = ({ breaksTaken, addBreak }) => {
+  const [breakData, setBreakData] = useState([]);
+  const [breakID, setBreakID] = useState("");
 
   // useEffect (() => {
   // loadBreakData()
@@ -30,15 +28,12 @@ const BreaksComponent = ({breaksTaken, addBreak}) => {
   //   })
   // }
 
-
   const addABreak = (evt) => {
-    addBreak()
+    addBreak();
     // setBreakID(breakData[0]._id)
     // console.log(breakID)
     // addBreak()
-
-  }
-
+  };
 
   return (
     <Bubble>
@@ -71,8 +66,12 @@ const BreaksComponent = ({breaksTaken, addBreak}) => {
 
       <br />
       <br />
+      <button>+Breaks</button>
+      <BreaksProgress />
       <ul>
-        <li>Breaks Taken: {breaksTaken} - Will be a bar showing breaks taken</li>
+        <li>
+          Breaks Taken: {breaksTaken} - Will be a bar showing breaks taken
+        </li>
         {/* <li>break id: {consumableData[0]._id}</li> */}
       </ul>
     </Bubble>
