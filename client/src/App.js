@@ -7,12 +7,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
 import { postDiaryEntry } from './helpers/DiaryService';
 import { postBreakData } from './helpers/BreaksService';
+import { postCoffeeData } from './helpers/CoffeeService';
+import { postWaterData } from './helpers/WaterService';
 
 
 function App() {
 
   const [diaryEntry, setDiaryEntry] = useState('')
-  const [breaksTaken, setBreaksTaken] = useState([]) 
 
   const addEntry = (submittedDiaryEntry) => {
     setDiaryEntry(submittedDiaryEntry)
@@ -26,12 +27,24 @@ function App() {
     postBreakData(time)
   }
 
+  const addWater = (timeAndDate) => {
+    const time = {timeTaken: 0}
+    time.timeTaken = timeAndDate
+    postWaterData(time)
+  }
+
+  const addCoffee = (timeAndDate) => {
+    const time = {timeTaken: 0}
+    time.timeTaken = timeAndDate
+    postCoffeeData(time)
+  }
+
   return (
     <div className="App">
       <Router>
           <NavBar></NavBar>
             <Routes>
-              <Route exact path='/' element = {<Dashboard addEntry={addEntry} breaksTaken={breaksTaken} addBreak={addBreak}/>} />
+              <Route exact path='/' element = {<Dashboard addEntry={addEntry} addBreak={addBreak} addWater={addWater} addCoffee={addCoffee}/>} />
               <Route exact path='/diary' element = {<Diary/>} />
               <Route exact path='/graphs' element = {<Graphs/>} />
             </Routes>

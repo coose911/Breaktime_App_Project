@@ -8,15 +8,17 @@ const Bubble = styled.section`
 `;
 
 // Props = waterDrank state & coffeeDrank state
-const ConsumptionComponent = ({ waterDrank, coffeeDrank }) => {
+const ConsumptionComponent = ({ waterDrank, coffeeDrank, addWater, addCoffee }) => {
   const [percentWater, setPercentWater] = useState(0);
   const [percentCoffee, setPercentCoffee] = useState(0);
 
   const increaseWater = () => {
+    addOneWater()
     if (percentWater + 10 > 100) return;
     setPercentWater(percentWater + 10);
   };
   const increaseCoffee = () => {
+    addOneCoffee()
     if (percentCoffee + 10 > 100) return;
     setPercentCoffee(percentCoffee + 10);
   };
@@ -25,6 +27,18 @@ const ConsumptionComponent = ({ waterDrank, coffeeDrank }) => {
   //     if (percent - 10 < 0) return;
   //     setPercent(percent - 10);
   //   };
+
+  const addOneCoffee = (evt) => {
+    const date = new Date()
+    const time = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds()
+    addCoffee(time)
+  }
+
+  const addOneWater = (evt) => {
+    const date = new Date()
+    const time = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds()
+    addWater(time)
+  }
 
   return (
     <Bubble>
