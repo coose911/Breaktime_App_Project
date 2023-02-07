@@ -11,7 +11,8 @@ margin-top: -5em;
   /* opacity: 0.6; */
   border-radius: 20px;
   color: antiquewhite;
-`;
+`
+
 const RadioButtonsContainer = styled.form`
   border: gray solid 2px;
   border-radius: 20px;
