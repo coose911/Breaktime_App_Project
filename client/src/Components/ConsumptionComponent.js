@@ -10,6 +10,8 @@ const Bubble = styled.section`
   /* opacity: 0.6; */
   border-radius: 20px;
   color: antiquewhite;
+  padding-left: 2em;
+  padding-right: 2em;
 `;
 
 // Props = waterDrank state & coffeeDrank state
@@ -51,15 +53,17 @@ const ConsumptionComponent = ({ waterDrank, coffeeDrank, addWater, addCoffee }) 
 
   return (
     <Bubble>
-      <h2>Coffee & Water Drunk</h2>
+      <h2>Coffee</h2>
       <button id="coffee-button" onClick={increaseCoffee}>
         <FontAwesomeIcon icon={faCoffee}/>
       </button>
+      <ConsumptionProgress percent={percentCoffee} />
+      <h2>Water</h2>
       <button id="water-button" onClick={increaseWater}>
         <FontAwesomeIcon icon={faBottleWater}/>
       </button>
       <ConsumptionProgress percent={percentWater} />
-      <ConsumptionProgress percent={percentCoffee} />
+      
     </Bubble>
   );
 };

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faClockFour, faClockRotateLeft, faUserClock } from "@fortawesome/free-solid-svg-icons";
 
 const Bubble = styled.section`
-margin-top: -5em;
+  margin-top: 0em;
   background-color: #144459;
   /* opacity: 0.6; */
   border-radius: 20px;
@@ -15,7 +15,19 @@ margin-top: -5em;
 const RadioButtonsContainer = styled.form`
   border: gray solid 2px;
   border-radius: 20px;
+  padding-left: 2em;
 `;
+
+const TitleContainer = styled.div`
+  padding-top: 0.5em;
+  padding-left: 2em;
+`
+const ProgressContainer = styled.div`
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+`
+
 
 // Props = breaksTaken state & breakLength state
 const BreaksComponent = ({ breaksTaken, addBreak }) => {
@@ -39,10 +51,12 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
 
   return (
     <Bubble>
-      <h2>Breaks Taken</h2>
-      <button onClick={addABreak}>
-        <FontAwesomeIcon icon={faClockRotateLeft} />
-      </button>
+      <TitleContainer>
+        <h2>Breaks Taken</h2>
+        <button onClick={addABreak}>
+          <FontAwesomeIcon icon={faClockRotateLeft} />
+        </button>
+      </TitleContainer>
 
       <br />
       <br />
@@ -70,7 +84,9 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
 
       <br />
       <br />
+      <ProgressContainer>
       <BreaksProgress percent={percentBreak} />
+      </ProgressContainer>
     </Bubble>
   );
 };
