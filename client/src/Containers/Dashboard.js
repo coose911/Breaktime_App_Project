@@ -8,7 +8,7 @@ import DiaryComponent from '../Components/DiaryComponent';
 
 
 
-const Dashboard = ({addEntry, breaksTaken, addBreak}) => {
+const Dashboard = ({addEntry, breaksTaken, addBreak, addCoffee, addWater}) => {
 
 
 
@@ -16,7 +16,7 @@ const Dashboard = ({addEntry, breaksTaken, addBreak}) => {
         <>
         <h1>BreakTime</h1>
         <BreaksComponent breaksTaken={breaksTaken} addBreak={addBreak}/>
-        <ConsumptionComponent/>
+        <ConsumptionComponent addCoffee={addCoffee} addWater={addWater}/>
         <DiaryComponent addEntry={addEntry}/>
         <Graphs/>
         <Diary/>
