@@ -13,7 +13,7 @@ const ImageContainer = styled.div`
     & > img {
     width: 25%;
     margin-left: 70%;
-    margin-top: -11em;
+    margin-top: -18em;
     margin-bottom: -8em;
     height: 40%}
 `

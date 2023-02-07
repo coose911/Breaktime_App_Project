@@ -6,4 +6,5 @@
  the endpoint did not exist on the server, new endpoint created
 4. uncaught error : connot find module '../helpers/BreakService'
  file had been moved out of source, rearranged the files.
-5. 
+5. Uncaught (in promise) ReferenceError: day is not defined
+ we seeded data and had 1 data for each entry (poor data sample)
