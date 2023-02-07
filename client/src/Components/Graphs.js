@@ -11,6 +11,7 @@ const Graphs = () => {
     const [breakData, setBreakData] = useState([0, 0, 0, 0, 0, 0, 0])
     const [waterData, setWaterData] = useState([0, 0, 0, 0, 0, 0, 0])
     const [coffeeData, setCoffeeData] = useState([0, 0, 0, 0, 0, 0, 0])
+
     // codes of week represente by numbers
     const breaks =  [0, 0, 0, 0, 0, 0, 0]
     const coffee =  [0, 0, 0, 0, 0, 0, 0]
@@ -40,7 +41,6 @@ const Graphs = () => {
         })
         return breaks
     }
-
     
     const sortCoffeeData = (dataToSort) => {
         const sorted = dataToSort.forEach((object, index) => {
@@ -86,6 +86,7 @@ const Graphs = () => {
                 text: 'Days of the Week'
             },
             categories: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri']
+            
         }
       };
 

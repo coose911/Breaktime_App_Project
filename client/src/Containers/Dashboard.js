@@ -31,8 +31,6 @@ const Dashboard = ({addEntry, breaksTaken, addBreak, addCoffee, addWater}) => {
         <BreaksComponent breaksTaken={breaksTaken} addBreak={addBreak}/>
         <ConsumptionComponent addCoffee={addCoffee} addWater={addWater}/>
         <DiaryComponent addEntry={addEntry}/>
-        <Graphs/>
-        <Diary/>
         </>
     );
 }
