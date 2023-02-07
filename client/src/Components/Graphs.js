@@ -67,12 +67,12 @@ const Graphs = () => {
             enabled: false
         },
         title: {
-          text: 'My Breaks'
+          text: 'My Breaks Over the Week'
         },
         series: [
           {
             name: 'Breaks',
-            data: breakData,
+            data: breakData.slice(1, 6),
             
           },
         ],
@@ -85,16 +85,19 @@ const Graphs = () => {
             title: {
                 text: 'Days of the Week'
             },
-            categories: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri']
-            
+            categories: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri'],
+            breaks: [{
+                from: 5,
+                to: 10,
+                breakSize: 1,
+                // gapSize: 1
+            }]
         }
       };
 
     return (
         
         <>
-        <h1>Graphs</h1>
-        <p>breakdata</p>
         <div>
         <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
