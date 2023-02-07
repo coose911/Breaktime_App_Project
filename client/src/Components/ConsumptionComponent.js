@@ -29,15 +29,19 @@ const ConsumptionComponent = ({ waterDrank, coffeeDrank, addWater, addCoffee }) 
   //   };
 
   const addOneCoffee = (evt) => {
-    const date = new Date()
-    const time = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds()
-    addCoffee(time)
+    const timeDate = {timeTaken: 0, day: 0}
+    const date = new Date();
+    timeDate.timeTaken = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    timeDate.day = date.getDay()
+    addCoffee(timeDate);
   }
 
   const addOneWater = (evt) => {
-    const date = new Date()
-    const time = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds()
-    addWater(time)
+    const timeDate = {timeTaken: 0, day: 0}
+    const date = new Date();
+    timeDate.timeTaken = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    timeDate.day = date.getDay()
+    addWater(timeDate);
   }
 
   return (

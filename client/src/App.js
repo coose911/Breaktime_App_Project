@@ -22,21 +22,15 @@ function App() {
   }
 
   const addBreak = (timeAndDate) => {
-    const time = {timeTaken: 0}
-    time.timeTaken = timeAndDate
-    postBreakData(time)
+    postBreakData(timeAndDate)
   }
 
   const addWater = (timeAndDate) => {
-    const time = {timeTaken: 0}
-    time.timeTaken = timeAndDate
-    postWaterData(time)
+    postWaterData(timeAndDate)
   }
 
   const addCoffee = (timeAndDate) => {
-    const time = {timeTaken: 0}
-    time.timeTaken = timeAndDate
-    postCoffeeData(time)
+    postCoffeeData(timeAndDate)
   }
 
   return (

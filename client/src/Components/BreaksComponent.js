@@ -24,11 +24,12 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
   };
 
   const addABreak = (evt) => {
+    const timeDate = {timeTaken: 0, day: 0}
     increaseBreakPercent();
     const date = new Date();
-    const time =
-      date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-    addBreak(time);
+    timeDate.timeTaken = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    timeDate.day = date.getDay()
+    addBreak(timeDate);
   };
 
   return (
