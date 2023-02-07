@@ -17,6 +17,21 @@ const Bubble = styled.section`
   color: antiquewhite;
   padding-right: 2em;
 `;
+
+// const Bubble = styled.section`
+//   backdrop-filter: blur(21px);
+//   -webkit-backdrop-filter: blur(21px);
+//   box-shadow: 0 8px 32px 0 rgba(36,148,162,1);
+//   border: 1px solid rgba(48,75,120,1);
+//   border-radius: 24px;
+//   padding: 20px;
+//   margin-top: 0em;
+//   margin-left: 1em;
+//   margin-right: 1em;
+
+// `
+
+
 const RadioButtonsContainer = styled.form`
   border: gray solid 2px;
   border-radius: 20px;
