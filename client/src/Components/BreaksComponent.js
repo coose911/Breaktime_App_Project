@@ -32,7 +32,9 @@ const BreaksComponent = ({breaksTaken, addBreak}) => {
 
 
   const addABreak = (evt) => {
-    addBreak()
+    const date = new Date()
+    const time = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds()
+    addBreak(time)
     // setBreakID(breakData[0]._id)
     // console.log(breakID)
     // addBreak()

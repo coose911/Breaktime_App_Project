@@ -6,13 +6,13 @@ import NavBar from './Components/NavBar';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
 import { postDiaryEntry } from './helpers/DiaryService';
-import { putBreakData } from './helpers/BreaksService';
+import { postBreakData } from './helpers/BreaksService';
 
 
 function App() {
 
   const [diaryEntry, setDiaryEntry] = useState('')
-  const [breaksTaken, setBreaksTaken] = useState(0)
+  const [breaksTaken, setBreaksTaken] = useState([]) 
 
   const addEntry = (submittedDiaryEntry) => {
     setDiaryEntry(submittedDiaryEntry)
@@ -20,9 +20,10 @@ function App() {
     // setDiaryEntry('')
   }
 
-  const addBreak = () => {
-    setBreaksTaken(breaksTaken + 1)
-    putBreakData(breaksTaken + 1)
+  const addBreak = (timeAndDate) => {
+    const time = {timeTaken: 0}
+    time.timeTaken = timeAndDate
+    postBreakData(time)
   }
 
   return (
