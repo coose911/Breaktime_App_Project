@@ -41,3 +41,19 @@ The user will be able to:
 - fill in an image when drunk all the amount of waters.
 - delete diary entry
 - user can comment on old diary posts with new feelings
+
+ ## PIE CHART
+
+source = Highcharts.com
+ - head over to highcharts.com for assistance/help if needed
+ - set up useEffect to pull the data through for the chart. (to display data)
+ - set up a fetch function
+ - cd into client - npom install highcharts
+ - npm install highcharts-react-official
+ - back to vs code and into file
+ - import Highcharts from "highcharts"
+ - import Highchartsreact from 'highcharts-react-official'
+ - head over to highcharts.com for assistance/help if needed
+ - add a div and the <Highchart> (in the documentaion on highcharts.com)
+ - graph should show now on the web page
+ - edit the graph as per preference
