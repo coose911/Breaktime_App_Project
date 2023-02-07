@@ -11,7 +11,10 @@ const Graphs = () => {
     const [breakData, setBreakData] = useState([0, 0, 0, 0, 0, 0, 0])
     const [waterData, setWaterData] = useState([0, 0, 0, 0, 0, 0, 0])
     const [coffeeData, setCoffeeData] = useState([0, 0, 0, 0, 0, 0, 0])
-    // codes of week represente by numbers 
+    // codes of week represente by numbers
+    const breaks =  [0, 0, 0, 0, 0, 0, 0]
+    const coffee =  [0, 0, 0, 0, 0, 0, 0]
+    const water =  [0, 0, 0, 0, 0, 0, 0]
    
     useEffect(() => {
         fetchdata()
@@ -24,18 +27,17 @@ const Graphs = () => {
 
         getCoffeeData()
         .then(res => sortCoffeeData(res))
-        .then(res => coffee = res)
+        .then(res => setCoffeeData(res))
 
         getWaterData()
         .then(res => sortWaterData(res))
-        .then(res => water = res)
+        .then(res => setWaterData(res))
     }  
 
     const sortBreakData = (dataToSort) => {
         const sorted = dataToSort.forEach((object, index) => {
                 breaks[object.day] += 1
         })
-        breakReady += 1
         return breaks
     }
 
@@ -53,17 +55,10 @@ const Graphs = () => {
         })
         return water
     }
-
-    
-
-
-
-
     
 // GRAPHS    
 
     const options = {
-
 
         chart: {
           type: 'spline'
@@ -93,20 +88,6 @@ const Graphs = () => {
             categories: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri']
         }
       };
-
-        
-    // const renderGraph = () => {
-    //     // graph = 'l'
-    //     return <HighchartsReact highcharts={Highcharts} options={options} />
-    // }
-
-
-
-
-
-
-
-
 
     return (
         
