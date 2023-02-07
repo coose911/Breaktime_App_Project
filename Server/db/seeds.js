@@ -47,8 +47,8 @@ db.breaks.insertMany([
     {timeTaken: '08:9:43', day: 3},
     {timeTaken: '16:9:43', day: 2},
     {timeTaken: '12:9:43', day: 5},
-    {timeTaken: '11:9:43', day: 4},
-    {timeTaken: '06:9:43', day: 1},
+    {timeTaken: '11:9:43', day: 3},
+    {timeTaken: '06:9:43', day: 3},
     {timeTaken: '06:9:43', day: 0},
     {timeTaken: '06:9:43', day: 6}
 ])

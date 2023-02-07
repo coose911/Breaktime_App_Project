@@ -8,20 +8,58 @@ import HighchartsReact from 'highcharts-react-official';
 
 const Graphs = () => {
 
-    const [breakData, setBreakData] = useState([])
-    const [waterData, setWaterData] = useState([])
-    const [coffeeData, setCoffeeData] = useState([])
-
+    const [breakData, setBreakData] = useState([0, 0, 0, 0, 0, 0, 0])
+    const [waterData, setWaterData] = useState([0, 0, 0, 0, 0, 0, 0])
+    const [coffeeData, setCoffeeData] = useState([0, 0, 0, 0, 0, 0, 0])
+    // codes of week represente by numbers 
+   
     useEffect(() => {
         fetchdata()
     }, [])
 
     const fetchdata = () => {
-        setBreakData(getBreakData())
-        setCoffeeData(getCoffeeData())
-        setWaterData(getWaterData())
-    }    
+        getBreakData()
+        .then(res => sortBreakData(res))
+        .then(res => setBreakData(res))
 
+        getCoffeeData()
+        .then(res => sortCoffeeData(res))
+        .then(res => coffee = res)
+
+        getWaterData()
+        .then(res => sortWaterData(res))
+        .then(res => water = res)
+    }  
+
+    const sortBreakData = (dataToSort) => {
+        const sorted = dataToSort.forEach((object, index) => {
+                breaks[object.day] += 1
+        })
+        breakReady += 1
+        return breaks
+    }
+
+    
+    const sortCoffeeData = (dataToSort) => {
+        const sorted = dataToSort.forEach((object, index) => {
+            coffee[object.day] += 1
+        })
+        return coffee
+    }
+
+    const sortWaterData = (dataToSort) => {
+        const sorted = dataToSort.forEach((object, index) => {
+            water[object.day] += 1
+        })
+        return water
+    }
+
+    
+
+
+
+
+    
 // GRAPHS    
 
     const options = {
@@ -39,8 +77,9 @@ const Graphs = () => {
         series: [
           {
             name: 'Breaks',
-            data: [1, 2, 1, 4, 3, 6]
-          }
+            data: breakData,
+            
+          },
         ],
         yAxis: {
             title: {
@@ -56,6 +95,10 @@ const Graphs = () => {
       };
 
         
+    // const renderGraph = () => {
+    //     // graph = 'l'
+    //     return <HighchartsReact highcharts={Highcharts} options={options} />
+    // }
 
 
 
@@ -71,7 +114,7 @@ const Graphs = () => {
         <h1>Graphs</h1>
         <p>breakdata</p>
         <div>
-            <HighchartsReact highcharts={Highcharts} options={options} />
+        <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
         </>
      );
