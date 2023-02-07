@@ -3,7 +3,7 @@ import { getBreakData } from "../helpers/BreaksService";
 import react, { useState, useEffect } from "react";
 import BreaksProgress from "./BreaksProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
+import { faClockRotateLeft, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -93,7 +93,9 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
         />
         <br />
         <br />
-        <input type="submit" value="Set Length"></input>
+        <button type="submit">
+          <FontAwesomeIcon icon={faClockRotateLeft} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
+        </button>
       </RadioButtonsContainer>
 
       <br />
