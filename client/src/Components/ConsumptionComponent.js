@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useState } from "react";
 import ConsumptionProgress from "./ConsumptionProgress";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBottleWater, faCoffee, faWater } from "@fortawesome/free-solid-svg-icons";
 
 const Bubble = styled.section`
   border: #00aeae solid 5px;
@@ -48,10 +50,10 @@ const ConsumptionComponent = ({ waterDrank, coffeeDrank, addWater, addCoffee }) 
     <Bubble>
       <h2>Water & Coffee Drunk</h2>
       <button id="coffee-button" onClick={increaseCoffee}>
-        + COFFEE
+        <FontAwesomeIcon icon={faCoffee}/>
       </button>
       <button id="water-button" onClick={increaseWater}>
-        + WATER
+        <FontAwesomeIcon icon={faBottleWater}/>
       </button>
       <ConsumptionProgress percent={percentWater} />
       <ConsumptionProgress percent={percentCoffee} />
