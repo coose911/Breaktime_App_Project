@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
+import { getDiaryEntries } from '../helpers/DiaryService'
 
 const Bubble = styled.section`
     margin-top: 3em;
@@ -18,12 +19,18 @@ const LastEntry = styled.ul`
 `
 
 // Props = diaryEntries state & addEntry function (below, needs to be moved)
-const DiaryComponent = ({diaryEntries, addEntry}) => {
+const DiaryComponent = ({addEntry}) => {
 
     // State for diary entry input text box:
     const [entry, setEntry] = useState ("")
     const [postToShow, setPostToShow] = useState("")
-
+    const [allDiaryPosts, setAllDiaryPosts] = useState([])
+    
+    useEffect(() => {
+        getDiaryEntries()
+        .then(res => showRandomPost(res))
+        
+    }, [])
     // To update the text as a diary entry is being typed:
     const handleTextChange = (evt) => {
         // console.log(evt.target.value)
@@ -40,6 +47,9 @@ const DiaryComponent = ({diaryEntries, addEntry}) => {
         setEntry("")
     }
 
+    const showRandomPost = (diaryentries) => {
+        setPostToShow(diaryentries[Math.floor(Math.random()*diaryentries.length)])
+    }
 
     // Filtering to find the most recent diary entry, then mapping to show it in a list
     // const mostRecentDiaryEntry = diaryEntries.filter(entry, index => index === 0);
@@ -63,7 +73,7 @@ const DiaryComponent = ({diaryEntries, addEntry}) => {
                 value="Post"
                 />
         </form>
-            <LastEntry> {postToShow} </LastEntry>
+            <LastEntry> {postToShow.entry} </LastEntry>
         </Bubble>
     )
 }
