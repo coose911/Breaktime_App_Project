@@ -11,10 +11,10 @@ export const getBreakData = () => {
     // .then(res.break = number)
 // }
 
-export const putBreakData = (payload) => {
+export const postBreakData = (payload) => {
     console.log(payload)
     return fetch(breakURL, {
-        method: "PUT",
+        method: "POST",
         body: JSON.stringify(payload),
         headers: { "Content-Type": "application/json" },
     }).then((res) => res.json());
