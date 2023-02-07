@@ -3,20 +3,42 @@ import { getBreakData } from "../helpers/BreaksService";
 import react, { useState, useEffect } from "react";
 import BreaksProgress from "./BreaksProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock, faClockFour, faClockRotateLeft, faUserClock } from "@fortawesome/free-solid-svg-icons";
+import { faClockRotateLeft, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
+
+
 
 const Bubble = styled.section`
-margin-top: -5em;
+  margin-top: 0em;
+  margin-left: 1em;
+  margin-right: 1em;
   background-color: #144459;
-  /* opacity: 0.6; */
+  opacity: 0.9;
   border-radius: 20px;
   color: antiquewhite;
-`
-
+  padding-right: 2em;
+`;
 const RadioButtonsContainer = styled.form`
   border: gray solid 2px;
   border-radius: 20px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-left: 2em;
+  margin-right: 60em;
 `;
+
+const TitleContainer = styled.div`
+  padding-top: 0.5em;
+  padding-left: 2em;
+`
+
+const ProgressContainer = styled.div`
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+`
+
 
 // Props = breaksTaken state & breakLength state
 const BreaksComponent = ({ breaksTaken, addBreak }) => {
@@ -39,12 +61,17 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
   };
 
   return (
+    <>
     <Bubble>
-      <h2>Breaks Taken</h2>
-      <button onClick={addABreak}>
-        <FontAwesomeIcon icon={faClockRotateLeft} />
-      </button>
-
+      <TitleContainer>
+        <h2>Breaks Taken</h2>
+        <button id='break-button' onClick={addABreak} style={{width: '60px', height: '50px'}}>
+          <FontAwesomeIcon icon={faFaceTired} size="lg" />
+        </button>
+      </TitleContainer>
+      <ProgressContainer>
+        <BreaksProgress percent={percentBreak} />
+      </ProgressContainer>
       <br />
       <br />
       <RadioButtonsContainer>
@@ -66,13 +93,15 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
         />
         <br />
         <br />
-        <input type="submit" value="Set Length"></input>
+        <button type="submit">
+          <FontAwesomeIcon icon={faClockRotateLeft} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
+        </button>
       </RadioButtonsContainer>
 
       <br />
       <br />
-      <BreaksProgress percent={percentBreak} />
     </Bubble>
+    </>
   );
 };
 
