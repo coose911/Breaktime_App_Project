@@ -4,7 +4,7 @@ import Graphs from './Components/Graphs';
 import Diary from './Components/Diary';
 import NavBar from './Components/NavBar';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { postDiaryEntry } from './helpers/DiaryService';
 import { postBreakData } from './helpers/BreaksService';
 import { postCoffeeData } from './helpers/CoffeeService';
@@ -14,7 +14,9 @@ import { postWaterData } from './helpers/WaterService';
 function App() {
 
   const [diaryEntry, setDiaryEntry] = useState('')
+  
 
+  
   const addEntry = (submittedDiaryEntry) => {
     setDiaryEntry(submittedDiaryEntry)
     postDiaryEntry(submittedDiaryEntry)
