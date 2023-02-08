@@ -2,7 +2,7 @@ const DiaryEntry = ({ entry }) => {
   return (
     <>
       <li className="li-entry">
-        {entry.date} at {entry.time}
+        {entry.day} at {entry.timeTaken}
         <br />
         {entry.entry}
       </li>
