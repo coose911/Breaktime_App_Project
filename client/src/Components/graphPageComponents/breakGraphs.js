@@ -33,8 +33,9 @@ const BreakGraph = () => {
           type: 'spline',
           style: {
             fontFamily: 'serif',
-            stroke: '#FFFFFF'
-          }
+            stroke: '#FFFFFF',
+            backgroundColor: 'rgba(0, 0, 0, 0)'
+
         },
         credits: {
             enabled: false

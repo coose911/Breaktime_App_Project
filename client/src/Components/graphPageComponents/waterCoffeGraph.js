@@ -52,8 +52,9 @@ const WaterCoffeeGraph = () => {
             type: 'area',
             style: {
                 fontFamily: 'serif',
-                stroke: '#FFFFFF'
-            }
+                stroke: '#FFFFFF',
+              backgroundColor: 'rgba(0, 0, 0, 0)'
+
         },
         accessibility: {
             description: 'comparison of coffees and waters'
