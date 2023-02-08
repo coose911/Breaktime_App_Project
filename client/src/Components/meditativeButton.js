@@ -1,3 +1,5 @@
+import { faOtter } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 
 
@@ -52,7 +54,9 @@ const MeditativeButton = () => {
           name="meditative-length"
           value="2"/>
         
-        <button onClick={doMedatitiveMomentClick}>Meditative Moment</button>
+        <button onClick={doMedatitiveMomentClick}>
+            <FontAwesomeIcon icon={faOtter} id="meditative-button" style={{width: '30px', height: '30px', margin: '-8px'}}/>
+        </button>
 
         </>
     )

@@ -6,6 +6,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClockFour, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
 import MeditativeButton from "./meditativeButton";
 
+
+//solid color background
+// const Bubble = styled.section`
+//   margin-top: 0em;
+//   margin-left: 1em;
+//   margin-right: 1em;
+//   background-color: #144459;
+//   opacity: 0.9;
+//   border-radius: 20px;
+//   color: antiquewhite;
+//   padding-right: 2em;
+// `;
+
+
 // glass background
 const Bubble = styled.section`
   backdrop-filter: blur(21px);

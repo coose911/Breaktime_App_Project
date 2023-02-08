@@ -32,7 +32,8 @@ body {
 #water-button,
 #break-button,
 #post-button,
-#timer-button {
+#timer-button,
+#meditative-button {
   padding: 8px 15px;
   border-radius: 5px;
   border: none;
