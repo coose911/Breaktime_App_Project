@@ -66,7 +66,7 @@ const WaterCoffeeDayPieChart = ({ waterAmount, coffeeAmount }) => {
   return (
     <>
       {waterAmount.length > 0 ||
-        (coffeeAmount > 0 && (
+        (coffeeAmount.length > 0 && (
           <HighchartsReact highcharts={Highcharts} options={options} />
         ))}
     </>
