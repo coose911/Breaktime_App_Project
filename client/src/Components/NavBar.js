@@ -15,28 +15,24 @@ const NavContainer = styled.ul`
     align-items: center;
     justify-content: space-between;
     margin-top: -9em;
-    margin-bottom: -10em;
+    margin-bottom: -11em;
     margin-left: 5em;
 
 `;
 
 const StyledLink = styled(Link)`
-    /* margin-left: 3.5em;
-    margin-right: -20px; */
+    margin-left: 1em;
+    margin-right: -20px;
     width: 20px;
     border: 30em;
     font-size: 45px;
-    /* margin-top: 120px;
-    margin-bottom: -120x; */
+    margin-top:80px;
+    margin-bottom: -140x;
 `
 
 const ImageContainer = styled.div`
     & > img {
-    width: 80%;
-    /* margin-left: 60%;
-    margin-top: -25em;
-    margin-bottom: -12em;
-    margin-right: 2em; */
+    width: 90%;
     height: 40%}
 `
 
