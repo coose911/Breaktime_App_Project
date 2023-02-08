@@ -1,13 +1,14 @@
-const DiaryEntry = ({entry}) => {
+const DiaryEntry = ({ entry }) => {
+  return (
+    <>
+      <li className="li-entry">
+        {entry.date} at {entry.time}
+        <br />
+        {entry.entry}
+      </li>
+      <br />
+    </>
+  );
+};
 
-
-    return (
-        <>
-            <li>{entry.date} at {entry.time}<br/>
-            {entry.entry}</li>
-            <br/>
-        </>
-    )
-}
-
-export default DiaryEntry   
+export default DiaryEntry;

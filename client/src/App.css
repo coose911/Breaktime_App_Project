@@ -1,6 +1,10 @@
 body {
-  background: rgb(36,148,162);
-  background: radial-gradient(circle, rgba(36,148,162,1) 40%, rgba(48,75,120,1) 100%);
+  background: rgb(36, 148, 162);
+  background: radial-gradient(
+    circle,
+    rgba(36, 148, 162, 1) 40%,
+    rgba(48, 75, 120, 1) 100%
+  );
   margin: 0;
   padding: 0;
 }
@@ -15,7 +19,7 @@ body {
 
 .inner-container {
   height: 100%;
-  background-color: #DBB13C;
+  background-color: #dbb13c;
   width: var(--width);
   transition: width 0.5s ease;
   text-align: center;
@@ -28,12 +32,12 @@ body {
 #water-button,
 #break-button,
 #post-button,
-#timer-button{
+#timer-button {
   padding: 8px 15px;
   border-radius: 5px;
   border: none;
   background-color: #333;
-  color: #DBB13C;
+  color: #dbb13c;
   cursor: pointer;
   outline: none;
   margin: 10px;
@@ -43,4 +47,33 @@ body {
 button:active {
   transform: translateY(2px);
   box-shadow: none;
+}
+.section-diary {
+  text-align: center;
+  background: radial-gradient(
+    circle,
+    rgba(36, 148, 162, 1) 40%,
+    rgba(48, 75, 120, 1) 100%
+  );
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.section-diary h1 {
+  font-size: 2em;
+  color: white;
+  margin-bottom: 1em;
+}
+
+.li-entry {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1em;
+  border-radius: 20px;
+  margin-bottom: 1em;
+  color: white;
+}
+
+.diary-entries {
+  list-style: none;
 }
