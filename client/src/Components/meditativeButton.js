@@ -1,7 +1,7 @@
 import { faOtter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
-
+import styled from "styled-components";
 
 const MeditativeButton = () => {
 
@@ -19,10 +19,8 @@ const MeditativeButton = () => {
         setTimeout(() => {
             navigate('/')
           }, time * 60000)
-
     }
 
-    
     const getValue = (buttons) => {
         let selectedSize = ''
     
@@ -46,7 +44,7 @@ const MeditativeButton = () => {
                             id="1"
                             name="meditative-length"
                             value="1"
-                            TextAlign="Right"/>
+                            />
                 <br />
 
                     <label>2 minutes</label>
@@ -55,7 +53,7 @@ const MeditativeButton = () => {
                             id="2"
                             name="meditative-length"
                             value="2"
-                            TextAlign="Right"/>
+                            />
                 <br/> <br/>
 
                 <button onClick={doMedatitiveMomentClick}>
