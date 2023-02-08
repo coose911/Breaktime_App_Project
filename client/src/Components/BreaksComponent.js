@@ -73,8 +73,8 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
 
   const addABreak = (evt) => {
     evt.preventDefault()
-    const timeDate = {timeTaken: 0, day: 0, length: 0}
-
+    const timeDate = {timeTaken: 0, day: 0, length: ''}
+    // regular break length is 5mins, unless specified
     increaseBreakPercent();
 
     const radioButtons = document.querySelectorAll('[name="break-length"]');
@@ -93,6 +93,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
     for (const button of radios) {
       if (button.checked) {
         selectedSize = button.value;
+        button.checked = false
         break;
         }else selectedSize = '5'
       }
