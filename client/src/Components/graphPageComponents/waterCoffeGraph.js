@@ -50,12 +50,12 @@ const WaterCoffeeGraph = () => {
     const options = {
         chart: {
             type: 'area',
-            style: {
-                fontFamily: 'serif',
-                stroke: '#FFFFFF',
-              backgroundColor: 'rgba(0, 0, 0, 0)'
-
+            backgroundColor: 'rgba(0, 0, 0, 0)'
         },
+            // style: {
+            //     fontFamily: 'serif',
+            //     stroke: '#FFFFFF'   
+            // },
         accessibility: {
             description: 'comparison of coffees and waters'
         },
@@ -84,9 +84,9 @@ const WaterCoffeeGraph = () => {
         //                 hover: {
         //                     enabled: true
         //                 }
-                    // }
-                // }
-            // }
+        //             }
+        //         }
+        //     }
         // },
         series: [{
             name: 'Waters',
@@ -95,7 +95,7 @@ const WaterCoffeeGraph = () => {
             name: 'Coffees',
             data: coffeeData.slice(1, 6)
         }]
-    }};
+    };
 
     return (
         <div>

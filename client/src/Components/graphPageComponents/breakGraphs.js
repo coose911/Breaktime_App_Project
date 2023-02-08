@@ -31,10 +31,10 @@ const BreakGraph = () => {
 
         chart: {
           type: 'spline',
-          style: {
-            fontFamily: 'serif',
-            stroke: '#FFFFFF',
-            backgroundColor: 'rgba(0, 0, 0, 0)'
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+        //   style: {
+        //     fontFamily: 'serif',
+        //     stroke: '#FFFFFF',    
         },
         credits: {
             enabled: false
@@ -59,7 +59,7 @@ const BreakGraph = () => {
             },
             categories: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri'],
         }
-    }};
+    };
 
     return (
         <div>
