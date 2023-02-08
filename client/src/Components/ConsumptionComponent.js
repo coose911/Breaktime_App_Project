@@ -49,6 +49,16 @@ const PieChartContainer = styled.div`
 `
 const ProgressBarsContainer = styled.div`
   grid-area: bars;
+  display: grid;
+  grid-template-areas: 
+    "coffee" 
+    "water" ;
+`
+const Coffee = styled.div`
+  grid-area: coffee;
+`
+const Water = styled.div`
+  grid-area: water;
 `
 
 // Props = waterDrank state & coffeeDrank state
@@ -58,8 +68,6 @@ const ConsumptionComponent = ({ addWater, addCoffee }) => {
   const [coffeeAmount, setCoffeeAmount] = useState(0);
   const [waterAmount, setWaterAmount] = useState(0);
   
-  
-
   const increaseWater = () => {
     addOneWater()
     if (percentWater + 10 > 100) return;
@@ -99,17 +107,23 @@ const ConsumptionComponent = ({ addWater, addCoffee }) => {
     <Bubble>
       
       <ProgressBarsContainer>
-        <h2>Coffee</h2>
-          <button id="coffee-button" onClick={increaseCoffee} style={{width: '60px', height: '50px'}}>
-            <FontAwesomeIcon icon={faCoffee}/>
-          </button>
-        <ConsumptionProgress percent={percentCoffee} />
 
-        <h2>Water</h2>
-          <button id="water-button" onClick={increaseWater} style={{width: '60px', height: '50px'}}>
-            <FontAwesomeIcon icon={faBottleWater}/>
-          </button>
-        <ConsumptionProgress percent={percentWater} />
+        <Coffee>
+          <h2>Coffee</h2>
+            <button id="coffee-button" onClick={increaseCoffee} style={{width: '60px', height: '50px'}}>
+              <FontAwesomeIcon icon={faCoffee}/>
+            </button>
+          <ConsumptionProgress percent={percentCoffee} />
+        </Coffee>
+
+        <Water>
+          <h2>Water</h2>
+            <button id="water-button" onClick={increaseWater} style={{width: '60px', height: '50px'}}>
+              <FontAwesomeIcon icon={faBottleWater}/>
+            </button>
+          <ConsumptionProgress percent={percentWater} />
+        </Water>
+
       </ProgressBarsContainer>
 
       <PieChartContainer>
