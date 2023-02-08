@@ -62,8 +62,21 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
   
   const [percentBreak, setPercentBreak] = useState(0);
   const [amountBreak, setAmountBreak] = useState(0)
+  
+  const date = new Date();
+  const todaysDate = date.getDay()
 
-
+  useEffect(() => {
+    getBreakData()
+    .then(res => res.filter(object => object.day === todaysDate))
+    .then(res => {
+      const lengthOfArray = res.length
+      setAmountBreak(lengthOfArray)
+      if (lengthOfArray > 10) {
+        setPercentBreak(100)
+      } else setPercentBreak(lengthOfArray * 10)
+    })
+  }, [])
 
   const increaseBreakPercent = () => {
     setAmountBreak(amountBreak + 1)
