@@ -3,7 +3,7 @@ const ConsumptionProgress = ({ percent = 0 }) => {
     <>
       <div className="outer-container">
         <div className="inner-container" style={{ width: `${percent}%` }}>
-          {percent >= 1 ? `${percent / 10} cups` : null}
+          {percent >= 1 ? `${percent / 10}` : null}
         </div>
       </div>
     </>
