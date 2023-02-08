@@ -35,7 +35,6 @@ const BreakGraph = () => {
             fontFamily: 'serif',
             stroke: '#FFFFFF',
             backgroundColor: 'rgba(0, 0, 0, 0)'
-
         },
         credits: {
             enabled: false
@@ -60,7 +59,7 @@ const BreakGraph = () => {
             },
             categories: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri'],
         }
-      };
+    }};
 
     return (
         <div>
