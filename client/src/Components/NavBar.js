@@ -30,9 +30,11 @@ const NavBar = () => {
     <>
       <div>
         <NavContainer>
-          <StyledLink to="/">
-            <FontAwesomeIcon icon={faHouse} color="#DBB13C" />
-          </StyledLink>
+          {location.pathname !== "/breathe" && (
+            <StyledLink to="/">
+              <FontAwesomeIcon icon={faHouse} color="#DBB13C" />
+            </StyledLink>
+          )}
           {location.pathname !== "/breathe" && (
             <StyledLink to="/breathe">
               <FontAwesomeIcon icon={faHeart} color="#DBB13C" />
