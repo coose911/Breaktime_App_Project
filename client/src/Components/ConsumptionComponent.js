@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ConsumptionProgress from "./ConsumptionProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBottleWater, faCoffee, faWater } from "@fortawesome/free-solid-svg-icons";
 import WaterCoffeeDayPieChart from "./WaterCoffeeDayPieChart";
+import {getWaterData} from "../helpers/WaterService"
+import {getCoffeeData} from "../helpers/CoffeeService"
 
 
 // glass background
@@ -57,9 +59,35 @@ const Water = styled.div`
 const ConsumptionComponent = ({ addWater, addCoffee }) => {
   const [percentWater, setPercentWater] = useState(0);
   const [percentCoffee, setPercentCoffee] = useState(0);
+
   const [coffeeAmount, setCoffeeAmount] = useState(0);
   const [waterAmount, setWaterAmount] = useState(0);
-  
+    
+  const date = new Date();
+  const todaysDate = date.getDay()
+
+  useEffect(() => {
+    getCoffeeData()
+    .then(res => res.filter(object => object.day === todaysDate))
+    .then(res => {
+      const lengthOfArray = res.length
+      setCoffeeAmount(lengthOfArray)
+      if (lengthOfArray > 10) {
+        setPercentCoffee(100)
+      } else setPercentCoffee(lengthOfArray * 10)
+    })
+
+    getWaterData()
+    .then(res => res.filter(object => object.day === todaysDate))
+    .then(res => {
+      const lengthOfArray = res.length
+      setWaterAmount(lengthOfArray)
+      if (lengthOfArray > 10) {
+        setPercentWater(100)
+      } else setPercentWater(lengthOfArray * 10)
+    })
+  }, [])
+
   const increaseWater = () => {
     addOneWater()
     if (percentWater + 10 > 100) return;
