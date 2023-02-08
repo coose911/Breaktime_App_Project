@@ -5,6 +5,7 @@ import BreaksProgress from "./BreaksProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClockFour, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
 import MeditativeButton from "./meditativeButton";
+import StopWatch from "./Stopwatch";
 
 
 //solid color background
@@ -63,7 +64,7 @@ const ProgressContainer = styled.div`
   padding-right: 1em;
 `
 
-const BreaksComponent = ({ breaksTaken, addBreak }) => {
+const BreaksComponent = ({ breaksTaken, addBreak, handleStart, handlePauseResume, handleReset }) => {
   
   const [percentBreak, setPercentBreak] = useState(0);
   const [amountBreak, setAmountBreak] = useState(0)
@@ -107,6 +108,10 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
     
   }
 
+  const handleRadioButton = () => {
+      handleStart()
+  }
+
   return (
     <Bubble>
 
@@ -133,7 +138,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
           type="radio"
           id="10"
           name="break-length"
-          value="10" /* onClick={handleRadioButton} */
+          value="10" onClick={handleRadioButton}
         />
         <br />
         <label>20 minutes</label>
@@ -141,13 +146,14 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
           type="radio"
           id="20"
           name="break-length"
-          value="20" /* onClick={handleRadioButton} */
+          value="20" onClick={handleRadioButton}
         />
         <br />
         <br />
         <button id="radio-button-submit" onClick={addABreak}>
           <FontAwesomeIcon icon={faClockFour} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
         </button>
+        <StopWatch/>
         <MeditativeButton/>
       </RadioButtonsContainer>
 
