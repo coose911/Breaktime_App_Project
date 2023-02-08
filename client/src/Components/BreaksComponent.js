@@ -52,6 +52,15 @@ const RadioButtonsContainer = styled.form`
   padding-top: 1em;
   padding-bottom: 1em;
   grid-area: radiobuttons;
+  display: grid;
+  grid-template-areas:
+    "length meditation";
+`
+const LengthButton = styled.div`
+  grid-area: length;
+`
+const MeditationButton = styled.div`
+  grid-area: meditation;
 `
 const TitleContainer = styled.div`
   padding-top: 0.5em;
@@ -126,28 +135,37 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
       </ProgressBarsContainer>
     
       <RadioButtonsContainer>
-        <legend>Pick a break length:</legend>
-          <label>10 minutes</label>
-            <input
-              type="radio"
-              id="10"
-              name="break-length"
-              value="10"
-            />
+        <LengthButton>
+          <legend>Pick a break length:</legend>
+            <label>10 minutes</label>
+              <input
+                type="radio"
+                id="10"
+                name="break-length"
+                value="10"
+              />
+            <br/>
+          
+            <label>20 minutes</label>
+              <input
+                type="radio"
+                id="20"
+                name="break-length"
+                value="20"
+              />
         
-          <label>20 minutes</label>
-            <input
-              type="radio"
-              id="20"
-              name="break-length"
-              value="20"
-            />
+          <br/><br/>
 
-          <button id="radio-button-submit" onClick={addABreak}>
-            <FontAwesomeIcon icon={faClockFour} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
-          </button>
+            <button id="radio-button-submit" onClick={addABreak}>
+              <FontAwesomeIcon icon={faClockFour} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
+            </button>
+          </LengthButton>
 
-        <MeditativeButton/>
+        <br/> <br/>
+
+        <MeditationButton>
+          <MeditativeButton/>
+        </MeditationButton>
 
       </RadioButtonsContainer>
 
