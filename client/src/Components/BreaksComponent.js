@@ -5,8 +5,6 @@ import BreaksProgress from "./BreaksProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClockRotateLeft, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
 
-
-
 //solid color background
 // const Bubble = styled.section`
 //   margin-top: 0em;
@@ -31,6 +29,14 @@ const Bubble = styled.section`
   margin-left: 1em;
   margin-right: 1em;
   margin-bottom: 5em;
+  display: grid;
+  grid-template-areas: 
+    "bars radiobuttons";
+  grid-template-columns: 55% 45%;
+`
+const ProgressBarsContainer = styled.div`
+  grid-area: bars;
+
 `
 
 
@@ -41,8 +47,7 @@ const RadioButtonsContainer = styled.form`
   padding-right: 2em;
   padding-top: 1em;
   padding-bottom: 1em;
-  margin-left: 2em;
-  margin-right: 60em;
+  grid-area: radiobuttons;
 `;
 
 const TitleContainer = styled.div`
@@ -102,17 +107,22 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
   }
 
   return (
-    <>
     <Bubble>
-      <TitleContainer>
-        <h2>Breaks Taken</h2>
-        <button id='break-button' onClick={addABreak} style={{width: '60px', height: '50px'}}>
-          <FontAwesomeIcon icon={faFaceTired} size="lg" />
-        </button>
-      </TitleContainer>
-      <ProgressContainer>
-        <BreaksProgress percent={percentBreak} />
-      </ProgressContainer>
+
+      <ProgressBarsContainer>
+
+        <TitleContainer>
+          <h2>Breaks Taken</h2>
+            <button id='break-button' onClick={addABreak} style={{width: '60px', height: '50px'}}>
+              <FontAwesomeIcon icon={faFaceTired} size="lg" />
+            </button>
+        </TitleContainer>
+
+        <ProgressContainer>
+          <BreaksProgress percent={percentBreak} />
+        </ProgressContainer>
+
+      </ProgressBarsContainer>
       <br />
       <br />
       <RadioButtonsContainer>
@@ -142,7 +152,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
       <br />
       <br />
     </Bubble>
-    </>
+
   );
 };
 
