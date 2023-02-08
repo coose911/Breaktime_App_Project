@@ -6,7 +6,6 @@ export const getWaterData = () => {
 }
 
 export const postWaterData = (payload) => {
-    console.log(payload)
     return fetch(waterURL, {
         method: "POST",
         body: JSON.stringify(payload),

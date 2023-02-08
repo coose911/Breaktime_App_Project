@@ -12,7 +12,6 @@ export const getBreakData = () => {
 // }
 
 export const postBreakData = (payload) => {
-    console.log(payload)
     return fetch(breakURL, {
         method: "POST",
         body: JSON.stringify(payload),

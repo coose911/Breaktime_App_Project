@@ -6,7 +6,6 @@ export const getCoffeeData = () => {
 }
 
 export const postCoffeeData = (payload) => {
-    console.log(payload)
     return fetch(coffeeURL, {
         method: "POST",
         body: JSON.stringify(payload),

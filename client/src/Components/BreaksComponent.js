@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { getBreakData } from "../helpers/BreaksService";
+import { getBreakData, addBreak } from "../helpers/BreaksService";
 import react, { useState, useEffect } from "react";
 import BreaksProgress from "./BreaksProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClockRotateLeft, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
+
 
 
 //solid color background
@@ -62,19 +63,43 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
   const [breakID, setBreakID] = useState("");
   const [percentBreak, setPercentBreak] = useState(0);
 
+
+
   const increaseBreakPercent = () => {
     if (percentBreak + 10 > 100) return;
     setPercentBreak(percentBreak + 10);
   };
 
+
   const addABreak = (evt) => {
-    const timeDate = {timeTaken: 0, day: 0}
+    evt.preventDefault()
+    const timeDate = {timeTaken: 0, day: 0, length: ''}
+    // regular break length is 5mins, unless specified
     increaseBreakPercent();
+
+    const radioButtons = document.querySelectorAll('[name="break-length"]');
+    
+    timeDate.length = radioButtonValueBreak(radioButtons)
     const date = new Date();
     timeDate.timeTaken = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     timeDate.day = date.getDay()
     addBreak(timeDate);
   };
+
+
+  const radioButtonValueBreak = (radios) => {
+    let selectedSize;
+    
+    for (const button of radios) {
+      if (button.checked) {
+        selectedSize = button.value;
+        button.checked = false
+        break;
+        }else selectedSize = '5'
+      }
+    return selectedSize
+    
+  }
 
   return (
     <>
@@ -109,7 +134,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
         />
         <br />
         <br />
-        <button type="submit">
+        <button id="radio-button-submit" onClick={addABreak}>
           <FontAwesomeIcon icon={faClockRotateLeft} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
         </button>
       </RadioButtonsContainer>
