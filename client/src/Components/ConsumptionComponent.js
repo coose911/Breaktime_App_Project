@@ -76,8 +76,8 @@ const ConsumptionComponent = ({ addWater, addCoffee }) => {
 
   const increaseCoffee = () => {
     addOneCoffee()
-    if (percentCoffee + 10 > 100) return;
-    setPercentCoffee(percentCoffee + 10);
+    if (percentCoffee + 25 > 100) return;
+    setPercentCoffee(percentCoffee + 25);
   };
 
   //   const decrease = () => {
