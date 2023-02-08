@@ -35,6 +35,18 @@ const Bubble = styled.section`
   margin-bottom: 5em;
 `
 
+const PieChartContainer = styled.div`
+  margin-top: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  width: 50%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
 // Props = waterDrank state & coffeeDrank state
 const ConsumptionComponent = ({ addWater, addCoffee }) => {
   const [percentWater, setPercentWater] = useState(0);
@@ -91,8 +103,9 @@ const ConsumptionComponent = ({ addWater, addCoffee }) => {
         <FontAwesomeIcon icon={faBottleWater}/>
       </button>
       <ConsumptionProgress percent={percentWater} />
-      <WaterCoffeeDayPieChart waterAmount={waterAmount} coffeeAmount={coffeeAmount}/>
-
+      <PieChartContainer>
+        <WaterCoffeeDayPieChart waterAmount={waterAmount} coffeeAmount={coffeeAmount}/>
+      </PieChartContainer>
       
 
     </Bubble>

@@ -49,7 +49,8 @@ const WaterCoffeeGraph = () => {
 
     const options = {
         chart: {
-            type: 'area'
+            type: 'area',
+            backgroundColor: 'rgba(0, 0, 0, 0)'
         },
         accessibility: {
             description: 'comparison of coffees and waters'

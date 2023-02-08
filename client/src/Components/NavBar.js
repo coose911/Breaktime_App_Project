@@ -15,14 +15,14 @@ const NavContainer = styled.ul`
 `;
 
 const StyledLink = styled(Link)`
-  margin-left: 4.5em;
-  margin-right: -20px;
-  width: 20px;
-  border: 30em;
-  font-size: 45px;
-  margin-top: 120px;
-  margin-bottom: -120x;
-`;
+    margin-left: 3.5em;
+    margin-right: -20px;
+    width: 20px;
+    border: 30em;
+    font-size: 45px;
+    margin-top: 120px;
+    margin-bottom: -120x;
+`
 
 const NavBar = () => {
   const location = useLocation();

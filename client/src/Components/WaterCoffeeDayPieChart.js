@@ -22,7 +22,8 @@ const WaterCoffeeDayPieChart = ({waterAmount, coffeeAmount}) => {
             plotBackgroundColor: null,
             plotBorderWidth: null,
             plotShadow: false,
-            type: 'pie'
+            type: 'pie',
+            backgroundColor: 'rgba(0, 0, 0, 0)'
         },
         title: {
             text: 'Coffees and Waters Today',
