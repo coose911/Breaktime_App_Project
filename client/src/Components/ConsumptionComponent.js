@@ -93,6 +93,7 @@ const ConsumptionComponent = ({ addWater, addCoffee }) => {
 
   return (
     <Bubble>
+      
       <h2>Coffee</h2>
       <button id="coffee-button" onClick={increaseCoffee} style={{width: '60px', height: '50px'}}>
         <FontAwesomeIcon icon={faCoffee}/>
@@ -103,6 +104,7 @@ const ConsumptionComponent = ({ addWater, addCoffee }) => {
         <FontAwesomeIcon icon={faBottleWater}/>
       </button>
       <ConsumptionProgress percent={percentWater} />
+
       <PieChartContainer>
         <WaterCoffeeDayPieChart waterAmount={waterAmount} coffeeAmount={coffeeAmount}/>
       </PieChartContainer>
