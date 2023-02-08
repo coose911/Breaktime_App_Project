@@ -3,7 +3,7 @@ import { getBreakData, addBreak } from "../helpers/BreaksService";
 import react, { useState, useEffect } from "react";
 import BreaksProgress from "./BreaksProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClockRotateLeft, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
+import { faClockFour, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
 import MeditativeButton from "./meditativeButton";
 
 // glass background
@@ -132,7 +132,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
         <br />
         <br />
         <button id="radio-button-submit" onClick={addABreak}>
-          <FontAwesomeIcon icon={faClockRotateLeft} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
+          <FontAwesomeIcon icon={faClockFour} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
         </button>
         <MeditativeButton/>
       </RadioButtonsContainer>
