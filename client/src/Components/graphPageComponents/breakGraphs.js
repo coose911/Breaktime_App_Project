@@ -30,7 +30,11 @@ const BreakGraph = () => {
     const options = {
 
         chart: {
-          type: 'spline'
+          type: 'spline',
+          style: {
+            fontFamily: 'serif',
+            stroke: '#FFFFFF'
+          }
         },
         credits: {
             enabled: false
