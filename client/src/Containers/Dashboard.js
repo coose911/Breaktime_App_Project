@@ -1,6 +1,6 @@
 import React from 'react'
 import Diary from '../Components/Diary';
-import Graphs from '../Components/Graphs';
+import Graphs from '../Components/graphPageComponents/Graphs';
 import NavBar from '../Components/NavBar';
 import BreaksComponent from '../Components/BreaksComponent';
 import ConsumptionComponent from '../Components/ConsumptionComponent';

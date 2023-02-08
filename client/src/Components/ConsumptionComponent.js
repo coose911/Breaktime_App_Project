@@ -3,6 +3,7 @@ import { useState } from "react";
 import ConsumptionProgress from "./ConsumptionProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBottleWater, faCoffee, faWater } from "@fortawesome/free-solid-svg-icons";
+import WaterCoffeeDayPieChart from "./WaterCoffeeDayPieChart";
 
 
 // solid color background
@@ -35,15 +36,20 @@ const Bubble = styled.section`
 `
 
 // Props = waterDrank state & coffeeDrank state
-const ConsumptionComponent = ({ waterDrank, coffeeDrank, addWater, addCoffee }) => {
+const ConsumptionComponent = ({ addWater, addCoffee }) => {
   const [percentWater, setPercentWater] = useState(0);
   const [percentCoffee, setPercentCoffee] = useState(0);
+  const [coffeeAmount, setCoffeeAmount] = useState(0);
+  const [waterAmount, setWaterAmount] = useState(0);
+  
+  
 
   const increaseWater = () => {
     addOneWater()
     if (percentWater + 10 > 100) return;
     setPercentWater(percentWater + 10);
-  };
+  }
+
   const increaseCoffee = () => {
     addOneCoffee()
     if (percentCoffee + 10 > 100) return;
@@ -61,6 +67,7 @@ const ConsumptionComponent = ({ waterDrank, coffeeDrank, addWater, addCoffee }) 
     timeDate.timeTaken = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     timeDate.day = date.getDay()
     addCoffee(timeDate);
+    return setCoffeeAmount(coffeeAmount + 1)
   }
 
   const addOneWater = (evt) => {
@@ -69,6 +76,7 @@ const ConsumptionComponent = ({ waterDrank, coffeeDrank, addWater, addCoffee }) 
     timeDate.timeTaken = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     timeDate.day = date.getDay()
     addWater(timeDate);
+    return setWaterAmount(waterAmount + 1)
   }
 
   return (
@@ -83,7 +91,12 @@ const ConsumptionComponent = ({ waterDrank, coffeeDrank, addWater, addCoffee }) 
         <FontAwesomeIcon icon={faBottleWater}/>
       </button>
       <ConsumptionProgress percent={percentWater} />
+
+      <ConsumptionProgress percent={percentCoffee} />
+      <WaterCoffeeDayPieChart waterAmount={waterAmount} coffeeAmount={coffeeAmount}/>
+
       
+
     </Bubble>
   );
 };
