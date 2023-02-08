@@ -11,9 +11,7 @@ import { postBreakData } from './helpers/BreaksService';
 import { postCoffeeData } from './helpers/CoffeeService';
 import { postWaterData } from './helpers/WaterService';
 import styled from 'styled-components';
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Hanken+Grotesk:wght@300&family=Quicksand&family=Source+Code+Pro&display=swap');
-</style>
+
 
 const AppContainer = styled.div`
   font-family: 'Didact Gothic', sans-serif;
