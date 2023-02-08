@@ -3,7 +3,7 @@ import { getBreakData, addBreak } from "../helpers/BreaksService";
 import react, { useState, useEffect } from "react";
 import BreaksProgress from "./BreaksProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClockRotateLeft, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
+import { faClockFour, faClockRotateLeft, faFaceTired, faStopwatch20, faTimesCircle, faTimesRectangle } from "@fortawesome/free-solid-svg-icons";
 
 //solid color background
 // const Bubble = styled.section`
@@ -145,7 +145,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
         <br />
         <br />
         <button id="radio-button-submit" onClick={addABreak}>
-          <FontAwesomeIcon icon={faClockRotateLeft} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
+          <FontAwesomeIcon icon={faClockFour} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
         </button>
       </RadioButtonsContainer>
 
