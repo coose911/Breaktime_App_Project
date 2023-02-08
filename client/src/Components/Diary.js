@@ -1,28 +1,24 @@
-import React, {useState, useEffect} from 'react'
-import DiaryEntry from './DiaryEntry';
-import { getDiaryEntries } from '../helpers/DiaryService';
+import React, { useState, useEffect } from "react";
+import DiaryEntry from "./DiaryEntry";
+import { getDiaryEntries } from "../helpers/DiaryService";
 
 const Diary = () => {
+  const [diaryEntries, setDiaryEntries] = useState([]);
 
-    const [diaryEntries, setDiaryEntries] = useState([])
+  useEffect(() => {
+    getDiaryEntries().then((res) => setDiaryEntries(res));
+  }, []);
 
-    useEffect(()=> {
-        getDiaryEntries()
-        .then(res => setDiaryEntries(res))
-    },[])
+  const showAllDiaryEntries = diaryEntries.map((entry) => (
+    <DiaryEntry key={entry._id} entry={entry}></DiaryEntry>
+  ));
 
-    const showAllDiaryEntries = diaryEntries.map((entry) => (
-        <DiaryEntry key={entry._id} entry={entry}></DiaryEntry>
-    ))
-
-    return ( 
-        <section>
-            <h1>Diary</h1>
-            <ul>
-                {showAllDiaryEntries}
-            </ul>
-        </section>
-    );
-}
+  return (
+    <section className="section-diary">
+      <h1>Diary</h1>
+      <ul>{showAllDiaryEntries}</ul>
+    </section>
+  );
+};
 
 export default Diary;
