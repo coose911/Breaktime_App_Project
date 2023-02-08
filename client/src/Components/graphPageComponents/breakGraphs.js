@@ -31,7 +31,11 @@ const BreakGraph = () => {
 
         chart: {
           type: 'spline',
-          backgroundColor: 'rgba(0, 0, 0, 0)'
+          style: {
+            fontFamily: 'serif',
+            stroke: '#FFFFFF',
+            backgroundColor: 'rgba(0, 0, 0, 0)'
+
         },
         credits: {
             enabled: false
