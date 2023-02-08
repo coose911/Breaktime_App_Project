@@ -4,19 +4,35 @@ import ConsumptionProgress from "./ConsumptionProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBottleWater, faCoffee, faWater } from "@fortawesome/free-solid-svg-icons";
 
+
+// solid color background
+// const Bubble = styled.section`
+//   margin-top: 3em;
+//   margin-left: 1em;
+//   margin-right: 1em;
+//   background-color: #144459;
+//   opacity: 0.9;
+//   border-radius: 20px;
+//   color: antiquewhite;
+//   padding-left: 2em;
+//   padding-right: 3em;
+//   padding-top: 0.5em;
+//   padding-bottom: 2em;
+// `;
+
+// glass background
 const Bubble = styled.section`
-  margin-top: 3em;
+  backdrop-filter: blur(21px);
+  -webkit-backdrop-filter: blur(21px);
+  box-shadow: 0 8px 32px 0 rgba(36,148,162,1);
+  border: 1px solid rgba(48,75,120,1);
+  border-radius: 24px;
+  padding: 20px;
+  margin-top: 0em;
   margin-left: 1em;
   margin-right: 1em;
-  background-color: #144459;
-  opacity: 0.9;
-  border-radius: 20px;
-  color: antiquewhite;
-  padding-left: 2em;
-  padding-right: 3em;
-  padding-top: 0.5em;
-  padding-bottom: 2em;
-`;
+  margin-bottom: 5em;
+`
 
 // Props = waterDrank state & coffeeDrank state
 const ConsumptionComponent = ({ waterDrank, coffeeDrank, addWater, addCoffee }) => {

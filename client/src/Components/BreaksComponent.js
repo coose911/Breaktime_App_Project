@@ -6,29 +6,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClockRotateLeft, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
 
 
-
-const Bubble = styled.section`
-  margin-top: 0em;
-  margin-left: 1em;
-  margin-right: 1em;
-  background-color: #144459;
-  opacity: 0.9;
-  border-radius: 20px;
-  color: antiquewhite;
-  padding-right: 2em;
-`;
-
+//solid color background
 // const Bubble = styled.section`
-//   backdrop-filter: blur(21px);code .
-//   -webkit-backdrop-filter: blur(21px);
-//   box-shadow: 0 8px 32px 0 rgba(36,148,162,1);
-//   border: 1px solid rgba(48,75,120,1);
-//   border-radius: 24px;
-//   padding: 20px;
 //   margin-top: 0em;
 //   margin-left: 1em;
 //   margin-right: 1em;
-// `
+//   background-color: #144459;
+//   opacity: 0.9;
+//   border-radius: 20px;
+//   color: antiquewhite;
+//   padding-right: 2em;
+// `;
+
+// glass background
+const Bubble = styled.section`
+  backdrop-filter: blur(21px);
+  -webkit-backdrop-filter: blur(21px);
+  box-shadow: 0 8px 32px 0 rgba(36,148,162,1);
+  border: 1px solid rgba(48,75,120,1);
+  border-radius: 24px;
+  padding: 20px;
+  margin-top: 0em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 5em;
+`
 
 
 const RadioButtonsContainer = styled.form`
