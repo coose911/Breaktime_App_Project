@@ -33,8 +33,10 @@ const Bubble = styled.section`
   margin-left: 1em;
   margin-right: 1em;
   margin-bottom: 5em;
+  display: grid;
+  grid-template-areas:
+    "bars piechart";
 `
-
 const PieChartContainer = styled.div`
   margin-top: 2em;
   margin-left: 2em;
@@ -43,8 +45,12 @@ const PieChartContainer = styled.div`
   width: 50%;
   height: auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  /* justify-content: center; */
+  grid-area: piechart;
+`
+const ProgressBarsContainer = styled.div`
+  grid-area: bars;
 `
 
 // Props = waterDrank state & coffeeDrank state
@@ -94,16 +100,19 @@ const ConsumptionComponent = ({ addWater, addCoffee }) => {
   return (
     <Bubble>
       
-      <h2>Coffee</h2>
-      <button id="coffee-button" onClick={increaseCoffee} style={{width: '60px', height: '50px'}}>
-        <FontAwesomeIcon icon={faCoffee}/>
-      </button>
-      <ConsumptionProgress percent={percentCoffee} />
-      <h2>Water</h2>
-      <button id="water-button" onClick={increaseWater} style={{width: '60px', height: '50px'}}>
-        <FontAwesomeIcon icon={faBottleWater}/>
-      </button>
-      <ConsumptionProgress percent={percentWater} />
+      <ProgressBarsContainer>
+        <h2>Coffee</h2>
+          <button id="coffee-button" onClick={increaseCoffee} style={{width: '60px', height: '50px'}}>
+            <FontAwesomeIcon icon={faCoffee}/>
+          </button>
+        <ConsumptionProgress percent={percentCoffee} />
+
+        <h2>Water</h2>
+          <button id="water-button" onClick={increaseWater} style={{width: '60px', height: '50px'}}>
+            <FontAwesomeIcon icon={faBottleWater}/>
+          </button>
+        <ConsumptionProgress percent={percentWater} />
+      </ProgressBarsContainer>
 
       <PieChartContainer>
         <WaterCoffeeDayPieChart waterAmount={waterAmount} coffeeAmount={coffeeAmount}/>
