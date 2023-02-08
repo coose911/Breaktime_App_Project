@@ -16,7 +16,7 @@ const Diary = () => {
   return (
     <section className="section-diary">
       <h1>Diary</h1>
-      <ul>{showAllDiaryEntries}</ul>
+      <ul className="diary-entries">{showAllDiaryEntries}</ul>
     </section>
   );
 };
