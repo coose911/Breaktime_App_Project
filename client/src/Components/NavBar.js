@@ -11,7 +11,7 @@ const NavContainer = styled.ul`
 `
 
 const StyledLink = styled(Link)`
-    margin-left: 5em;
+    margin-left: 4.5em;
     margin-right: -20px;
     width: 20px;
     border: 30em;
@@ -31,13 +31,13 @@ const NavBar = () => {
             <div>
                 <NavContainer>
                     <StyledLink  to='/'>
-                        <FontAwesomeIcon icon={faHouse} color='black'/>
+                        <FontAwesomeIcon icon={faHouse} color='#DBB13C'/>
                     </StyledLink>
                     <StyledLink to='/diary'>
-                        <FontAwesomeIcon icon={faBook} color='black'/>
+                        <FontAwesomeIcon icon={faBook} color='#DBB13C'/>
                     </StyledLink>
                     <StyledLink  to='/graphs'>
-                        <FontAwesomeIcon icon={faChartSimple} color='black'/>
+                        <FontAwesomeIcon icon={faChartSimple} color='#DBB13C'/>
                     </StyledLink>
                 </NavContainer>
             </div>

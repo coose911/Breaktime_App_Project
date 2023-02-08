@@ -1,16 +1,43 @@
 import styled from 'styled-components'
 import React, {useState} from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
+
+//solid color background
+// const Bubble = styled.section`
+//     padding-left: 2em;
+//     padding-top: 0.5em;
+//     padding-bottom: 2em;
+//     padding-right: 2em;
+//     margin-top: 3em;
+//     margin-left: 1em;
+//     margin-right: 1em;
+//     margin-bottom: 5em;
+//     background-color: #144459;
+//     opacity: 0.9;
+//     border-radius: 20px;
+//     color: antiquewhite;
+// `
+
+// glass background
 const Bubble = styled.section`
-    margin-top: 3em;
-    background-color: #144459;
-    /* opacity: 0.6; */
-    border-radius: 20px;
-    color: antiquewhite;
+    backdrop-filter: blur(21px);
+    -webkit-backdrop-filter: blur(21px);
+    box-shadow: 0 8px 32px 0 rgba(36,148,162,1);
+    border: 1px solid rgba(48,75,120,1);
+    border-radius: 24px;
+    padding: 20px;
+    margin-top: 0em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 5em;
 `
+
 const InputBox = styled.input`
-    height: 150px;
-    width: 300px;
+    height: 100px;
+    width: 700px;
+    margin-right: 1em;
 `
 const LastEntry = styled.ul`
     border: gray solid 2px;
@@ -58,10 +85,9 @@ const DiaryComponent = ({diaryEntries, addEntry}) => {
                 value={entry} 
                 onChange={handleTextChange} 
                 />
-            <input
-                type="submit"
-                value="Post"
-                />
+            <button id='post-button' type="submit" style={{width: '60px', height: '100px'}}>
+                <FontAwesomeIcon icon={faPaperPlane}/>
+            </button>
         </form>
             <LastEntry> {postToShow} </LastEntry>
         </Bubble>
