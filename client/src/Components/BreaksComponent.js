@@ -3,12 +3,8 @@ import { getBreakData, addBreak } from "../helpers/BreaksService";
 import react, { useState, useEffect } from "react";
 import BreaksProgress from "./BreaksProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-<<<<<<< HEAD
-import { faClockFour, faClockRotateLeft, faFaceTired, faStopwatch20, faTimesCircle, faTimesRectangle } from "@fortawesome/free-solid-svg-icons";
-=======
-import { faClockRotateLeft, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
+import { faClockRotateLeft, faFaceTired, faStopwatch20, faClockFour } from "@fortawesome/free-solid-svg-icons";
 import MeditativeButton from "./meditativeButton";
->>>>>>> 1c37fa36b178498f7fac451f7b0f4a91851f2714
 
 //solid color background
 // const Bubble = styled.section`
