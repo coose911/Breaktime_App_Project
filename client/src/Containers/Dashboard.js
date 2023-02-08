@@ -6,7 +6,6 @@ import NavBar from '../Components/NavBar';
 import BreaksComponent from '../Components/BreaksComponent';
 import ConsumptionComponent from '../Components/ConsumptionComponent';
 import DiaryComponent from '../Components/DiaryComponent';
-import Logo from '../images/transparent_logo_yellow.png'
 import styled from 'styled-components';
 
 
@@ -27,9 +26,6 @@ const Dashboard = ({addEntry, breaksTaken, addBreak, addCoffee, addWater}) => {
 
     return ( 
         <>
-        <ImageContainer>
-            <img src={Logo}/>
-        </ImageContainer>
         <BreaksComponent breaksTaken={breaksTaken} addBreak={addBreak}/>
         <ConsumptionComponent addCoffee={addCoffee} addWater={addWater}/>
         <DiaryComponent addEntry={addEntry}/>
