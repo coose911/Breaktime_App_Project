@@ -28,13 +28,11 @@ const ProgressBarsContainer = styled.div`
 
 `
 const RadioButtonsContainer = styled.form`
- 
   backdrop-filter: blur(21px);
   -webkit-backdrop-filter: blur(21px);
   box-shadow: 0 8px 32px 0 rgba(36,148,162,1);
   border: 1px solid rgba(48,75,120,1);
   border-radius: 24px;
-  border-radius: 20px;
   padding-left: 2em;
   padding-right: 2em;
   padding-top: 1em;
