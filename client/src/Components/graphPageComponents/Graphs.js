@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import BreakGraph from './breakGraphs';
 import WaterCoffeeGraph from './waterCoffeGraph';
 import styled from 'styled-components';
+import "./Graphs.css";
 
 const SingleGraphContainer = styled.div`
     width: 80%;

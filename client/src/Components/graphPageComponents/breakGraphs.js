@@ -30,8 +30,8 @@ const BreakGraph = () => {
     const options = {
 
         chart: {
-          type: 'spline',
-          backgroundColor: 'rgba(0, 0, 0, 0)',
+            type: 'spline',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
         //   style: {
         //     fontFamily: 'serif',
         //     stroke: '#FFFFFF',    
@@ -40,13 +40,14 @@ const BreakGraph = () => {
             enabled: false
         },
         title: {
-          text: 'My Breaks Over the Week'
+            text: 'My Breaks Over the Week'
         },
+        colors: ['#DBB13C'],
         series: [
-          {
+        {
             name: 'Breaks',
             data: breakData.slice(1, 6),
-          },
+        },
         ],
         yAxis: {
             title: {
@@ -62,9 +63,16 @@ const BreakGraph = () => {
     };
 
     return (
+        <>
         <div>
             <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        
+        <div id="container"></div>
+        </>
     )
 }
 

@@ -65,6 +65,7 @@ const WaterCoffeeGraph = () => {
         title: {
             text: 'Coffees and Waters Drank Over the Week'
         },
+        colors: ['#DBB13C', '#2C3258'],
         xAxis: {
             title: {
                 text: 'Days of the Week'
