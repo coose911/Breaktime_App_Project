@@ -91,8 +91,6 @@ const ConsumptionComponent = ({ addWater, addCoffee }) => {
         <FontAwesomeIcon icon={faBottleWater}/>
       </button>
       <ConsumptionProgress percent={percentWater} />
-
-      <ConsumptionProgress percent={percentCoffee} />
       <WaterCoffeeDayPieChart waterAmount={waterAmount} coffeeAmount={coffeeAmount}/>
 
       
