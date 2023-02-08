@@ -38,14 +38,15 @@ const MeditativeButton = () => {
 
     return (
         <>
-            <legend>Meditative minutes:</legend>
+            <legend>Meditate:</legend>
                 <br/>
                     <label>1 minute</label>
                         <input
                             type="radio"
                             id="1"
                             name="meditative-length"
-                            value="1"/>
+                            value="1"
+                            TextAlign="Right"/>
                 <br />
 
                     <label>2 minutes</label>
@@ -53,7 +54,8 @@ const MeditativeButton = () => {
                             type="radio"
                             id="2"
                             name="meditative-length"
-                            value="2"/>
+                            value="2"
+                            TextAlign="Right"/>
                 <br/> <br/>
 
                 <button onClick={doMedatitiveMomentClick}>
