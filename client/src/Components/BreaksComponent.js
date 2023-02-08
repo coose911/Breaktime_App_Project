@@ -64,13 +64,14 @@ const ProgressContainer = styled.div`
 
 // Props = breaksTaken state & breakLength state
 const BreaksComponent = ({ breaksTaken, addBreak }) => {
-  const [breakData, setBreakData] = useState([]);
-  const [breakID, setBreakID] = useState("");
+  
   const [percentBreak, setPercentBreak] = useState(0);
+  const [amountBreak, setAmountBreak] = useState(0)
 
 
 
   const increaseBreakPercent = () => {
+    setAmountBreak(amountBreak + 1)
     if (percentBreak + 10 > 100) return;
     setPercentBreak(percentBreak + 10);
   };
@@ -119,7 +120,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
         </TitleContainer>
 
         <ProgressContainer>
-          <BreaksProgress percent={percentBreak} />
+          <BreaksProgress percent={percentBreak} amount={amountBreak}/>
         </ProgressContainer>
 
       </ProgressBarsContainer>
