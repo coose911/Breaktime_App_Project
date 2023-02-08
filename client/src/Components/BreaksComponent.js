@@ -19,7 +19,7 @@ const Bubble = styled.section`
 `;
 
 // const Bubble = styled.section`
-//   backdrop-filter: blur(21px);
+//   backdrop-filter: blur(21px);code .
 //   -webkit-backdrop-filter: blur(21px);
 //   box-shadow: 0 8px 32px 0 rgba(36,148,162,1);
 //   border: 1px solid rgba(48,75,120,1);
@@ -28,7 +28,6 @@ const Bubble = styled.section`
 //   margin-top: 0em;
 //   margin-left: 1em;
 //   margin-right: 1em;
-
 // `
 
 
