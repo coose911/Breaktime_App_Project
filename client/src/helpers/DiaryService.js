@@ -9,7 +9,6 @@ export const getSingleDiaryEntry = (id) => {
 };
 
 export const postDiaryEntry = (payload) => {
-  console.log(payload);
   return fetch(diaryURL, {
     method: "POST",
     body: JSON.stringify(payload),
