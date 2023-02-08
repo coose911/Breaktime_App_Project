@@ -1,7 +1,7 @@
 import { faOtter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
-
+import styled from "styled-components";
 
 const MeditativeButton = () => {
 
@@ -19,10 +19,8 @@ const MeditativeButton = () => {
         setTimeout(() => {
             navigate('/')
           }, time * 60000)
-
     }
 
-    
     const getValue = (buttons) => {
         let selectedSize = ''
     
@@ -38,25 +36,29 @@ const MeditativeButton = () => {
 
     return (
         <>
-        <legend>Meditative minutes:</legend>
-        <label>1 minute</label>
-        <input
-          type="radio"
-          id="1"
-          name="meditative-length"
-          value="1"/>
-        <br />
+            <legend>Meditate:</legend>
+                <br/>
+                    <label>1 minute</label>
+                        <input
+                            type="radio"
+                            id="1"
+                            name="meditative-length"
+                            value="1"
+                            />
+                <br />
 
-        <label>2 minutes</label>
-        <input
-          type="radio"
-          id="2"
-          name="meditative-length"
-          value="2"/>
-        
-        <button onClick={doMedatitiveMomentClick}>
-            <FontAwesomeIcon icon={faOtter} id="meditative-button" style={{width: '30px', height: '30px', margin: '-8px'}}/>
-        </button>
+                    <label>2 minutes</label>
+                        <input
+                            type="radio"
+                            id="2"
+                            name="meditative-length"
+                            value="2"
+                            />
+                <br/> <br/>
+
+                <button onClick={doMedatitiveMomentClick}>
+                    <FontAwesomeIcon icon={faOtter} id="meditative-button" style={{width: '30px', height: '30px', margin: '-8px'}}/>
+                </button>
 
         </>
     )

@@ -6,20 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClockFour, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
 import MeditativeButton from "./meditativeButton";
 
-
-//solid color background
-// const Bubble = styled.section`
-//   margin-top: 0em;
-//   margin-left: 1em;
-//   margin-right: 1em;
-//   background-color: #144459;
-//   opacity: 0.9;
-//   border-radius: 20px;
-//   color: antiquewhite;
-//   padding-right: 2em;
-// `;
-
-
 // glass background
 const Bubble = styled.section`
   backdrop-filter: blur(21px);
@@ -39,7 +25,6 @@ const Bubble = styled.section`
 `
 const ProgressBarsContainer = styled.div`
   grid-area: bars;
-
 `
 const RadioButtonsContainer = styled.form`
   backdrop-filter: blur(21px);
@@ -52,10 +37,20 @@ const RadioButtonsContainer = styled.form`
   padding-top: 1em;
   padding-bottom: 1em;
   grid-area: radiobuttons;
+  display: grid;
+  height: auto;
+  grid-template-areas:
+    "length meditation";
+`
+const LengthButton = styled.div`
+  grid-area: length;
+`
+const MeditationButton = styled.div`
+  grid-area: meditation;
 `
 const TitleContainer = styled.div`
   padding-top: 0.5em;
-  padding-left: 2em;
+  padding-left: 1em;
 `
 const ProgressContainer = styled.div`
   padding-bottom: 1em;
@@ -124,35 +119,43 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
         </ProgressContainer>
 
       </ProgressBarsContainer>
-      <br />
-      <br />
+    
       <RadioButtonsContainer>
-        <legend>Pick a break length:</legend>
-        <label>10 minutes</label>
-        <input
-          type="radio"
-          id="10"
-          name="break-length"
-          value="10" /* onClick={handleRadioButton} */
-        />
-        <br />
-        <label>20 minutes</label>
-        <input
-          type="radio"
-          id="20"
-          name="break-length"
-          value="20" /* onClick={handleRadioButton} */
-        />
-        <br />
-        <br />
-        <button id="radio-button-submit" onClick={addABreak}>
-          <FontAwesomeIcon icon={faClockFour} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
-        </button>
-        <MeditativeButton/>
+        <LengthButton>
+          <legend>Pick a break length:</legend>
+            <br/>
+              <label>10 minutes</label>
+                <input
+                  type="radio"
+                  id="10"
+                  name="break-length"
+                  value="10"
+                />
+              <br/>
+            
+              <label>20 minutes</label>
+                <input
+                  type="radio"
+                  id="20"
+                  name="break-length"
+                  value="20"
+                />
+          
+            <br/><br/>
+
+            <button id="radio-button-submit" onClick={addABreak}>
+              <FontAwesomeIcon icon={faClockFour} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
+            </button>
+          </LengthButton>
+
+        <br/> <br/>
+
+        <MeditationButton>
+          <MeditativeButton/>
+        </MeditationButton>
+
       </RadioButtonsContainer>
 
-      <br />
-      <br />
     </Bubble>
 
   );
