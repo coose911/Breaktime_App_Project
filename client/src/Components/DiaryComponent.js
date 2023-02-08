@@ -51,6 +51,7 @@ const DiaryComponent = ({addEntry}) => {
     // State for diary entry input text box:
     const [entry, setEntry] = useState ("")
     const [postToShow, setPostToShow] = useState("")
+    const daysOftheWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat']
     
     useEffect(() => {
         getDiaryEntries()
@@ -66,12 +67,13 @@ const DiaryComponent = ({addEntry}) => {
     // To handle the submission of a new entry:
     const handleFormSubmit = (evt) => {
         evt.preventDefault()
-        let diaryEntry = {timeTaken: 0, day: 0}
+        let diaryEntry = {timeTaken: 0, day: ''}
         diaryEntry['entry'] = entry
         // addEntry lives in the same file as diary entry state and is passed down as a prop
         const date = new Date();
         diaryEntry.timeTaken = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-        diaryEntry.day = date.getDay()
+        //sets the day in dairyEntry to a string of the day instead of a number
+        diaryEntry.day = daysOftheWeek[date.getDay()]
         addEntry(diaryEntry)
         // sets the diary entry on the hompage to show the newly posted one
         setPostToShow(diaryEntry)
@@ -97,7 +99,7 @@ const DiaryComponent = ({addEntry}) => {
                 <FontAwesomeIcon icon={faPaperPlane}/>
             </button>
         </form>
-            <LastEntry> {postToShow.entry} - {postToShow.timeTaken}</LastEntry>
+            <LastEntry> {postToShow.entry} - {postToShow.day} at: {postToShow.timeTaken} </LastEntry>
         </Bubble>
     )
 }
