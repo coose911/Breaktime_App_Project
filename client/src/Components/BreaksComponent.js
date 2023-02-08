@@ -3,24 +3,8 @@ import { getBreakData, addBreak } from "../helpers/BreaksService";
 import react, { useState, useEffect } from "react";
 import BreaksProgress from "./BreaksProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-<<<<<<< HEAD
-import { faClockFour, faClockRotateLeft, faFaceTired, faStopwatch20, faTimesCircle, faTimesRectangle } from "@fortawesome/free-solid-svg-icons";
-=======
-import { faClockRotateLeft, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
+import { faClockFour, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
 import MeditativeButton from "./meditativeButton";
->>>>>>> 1c37fa36b178498f7fac451f7b0f4a91851f2714
-
-//solid color background
-// const Bubble = styled.section`
-//   margin-top: 0em;
-//   margin-left: 1em;
-//   margin-right: 1em;
-//   background-color: #144459;
-//   opacity: 0.9;
-//   border-radius: 20px;
-//   color: antiquewhite;
-//   padding-right: 2em;
-// `;
 
 // glass background
 const Bubble = styled.section`
@@ -43,31 +27,28 @@ const ProgressBarsContainer = styled.div`
   grid-area: bars;
 
 `
-
-
 const RadioButtonsContainer = styled.form`
-  border: gray solid 2px;
-  border-radius: 20px;
+  backdrop-filter: blur(21px);
+  -webkit-backdrop-filter: blur(21px);
+  box-shadow: 0 8px 32px 0 rgba(36,148,162,1);
+  border: 1px solid rgba(48,75,120,1);
+  border-radius: 24px;
   padding-left: 2em;
   padding-right: 2em;
   padding-top: 1em;
   padding-bottom: 1em;
   grid-area: radiobuttons;
-`;
-
+`
 const TitleContainer = styled.div`
   padding-top: 0.5em;
   padding-left: 2em;
 `
-
 const ProgressContainer = styled.div`
   padding-bottom: 1em;
   padding-left: 1em;
   padding-right: 1em;
 `
 
-
-// Props = breaksTaken state & breakLength state
 const BreaksComponent = ({ breaksTaken, addBreak }) => {
   
   const [percentBreak, setPercentBreak] = useState(0);
@@ -132,7 +113,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
       <br />
       <br />
       <RadioButtonsContainer>
-        <legend>Select your preferred break length:</legend>
+        <legend>Pick a break length:</legend>
         <label>10 minutes</label>
         <input
           type="radio"
