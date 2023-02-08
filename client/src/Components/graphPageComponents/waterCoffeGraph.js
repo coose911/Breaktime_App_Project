@@ -56,6 +56,9 @@ const WaterCoffeeGraph = () => {
             //     fontFamily: 'serif',
             //     stroke: '#FFFFFF'   
             // },
+            credits: {
+                enabled: false
+            },
         accessibility: {
             description: 'comparison of coffees and waters'
         },
