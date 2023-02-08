@@ -27,6 +27,9 @@ const StyledLink = styled(Link)`
   font-size: 45px;
   margin-top: 80px;
   margin-bottom: -140x;
+  &:hover {
+    font-size: 65px;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -58,7 +61,6 @@ const NavBar = () => {
             <StyledLink to="/graphs">
               <FontAwesomeIcon icon={faChartSimple} color="#DBB13C" />
             </StyledLink>
-
             <ImageContainer>
               <img src={Logo} />
             </ImageContainer>

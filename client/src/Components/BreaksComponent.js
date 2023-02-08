@@ -3,7 +3,12 @@ import { getBreakData, addBreak } from "../helpers/BreaksService";
 import react, { useState, useEffect } from "react";
 import BreaksProgress from "./BreaksProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+<<<<<<< HEAD
 import { faClockFour, faClockRotateLeft, faFaceTired, faStopwatch20, faTimesCircle, faTimesRectangle } from "@fortawesome/free-solid-svg-icons";
+=======
+import { faClockRotateLeft, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
+import MeditativeButton from "./meditativeButton";
+>>>>>>> 1c37fa36b178498f7fac451f7b0f4a91851f2714
 
 //solid color background
 // const Bubble = styled.section`
@@ -64,13 +69,14 @@ const ProgressContainer = styled.div`
 
 // Props = breaksTaken state & breakLength state
 const BreaksComponent = ({ breaksTaken, addBreak }) => {
-  const [breakData, setBreakData] = useState([]);
-  const [breakID, setBreakID] = useState("");
+  
   const [percentBreak, setPercentBreak] = useState(0);
+  const [amountBreak, setAmountBreak] = useState(0)
 
 
 
   const increaseBreakPercent = () => {
+    setAmountBreak(amountBreak + 1)
     if (percentBreak + 10 > 100) return;
     setPercentBreak(percentBreak + 10);
   };
@@ -119,7 +125,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
         </TitleContainer>
 
         <ProgressContainer>
-          <BreaksProgress percent={percentBreak} />
+          <BreaksProgress percent={percentBreak} amount={amountBreak}/>
         </ProgressContainer>
 
       </ProgressBarsContainer>
@@ -147,6 +153,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
         <button id="radio-button-submit" onClick={addABreak}>
           <FontAwesomeIcon icon={faClockFour} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
         </button>
+        <MeditativeButton/>
       </RadioButtonsContainer>
 
       <br />

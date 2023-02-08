@@ -113,7 +113,7 @@ const ConsumptionComponent = ({ addWater, addCoffee }) => {
             <button id="coffee-button" onClick={increaseCoffee} style={{width: '60px', height: '50px'}}>
               <FontAwesomeIcon icon={faCoffee}/>
             </button>
-          <ConsumptionProgress percent={percentCoffee} />
+          <ConsumptionProgress percent={percentCoffee} amount={coffeeAmount} />
         </Coffee>
 
         <Water>
@@ -121,7 +121,7 @@ const ConsumptionComponent = ({ addWater, addCoffee }) => {
             <button id="water-button" onClick={increaseWater} style={{width: '60px', height: '50px'}}>
               <FontAwesomeIcon icon={faBottleWater}/>
             </button>
-          <ConsumptionProgress percent={percentWater} />
+          <ConsumptionProgress percent={percentWater} amount={waterAmount}/>
         </Water>
 
       </ProgressBarsContainer>

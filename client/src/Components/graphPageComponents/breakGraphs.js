@@ -36,6 +36,9 @@ const BreakGraph = () => {
         //     fontFamily: 'serif',
         //     stroke: '#FFFFFF',    
         },
+        accessibility: {
+            description: 'showing breaks over the week'
+        },
         credits: {
             enabled: false
         },
