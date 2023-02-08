@@ -7,26 +7,26 @@ db.dropDatabase();
 db.diary_entries.insertMany([
     {
         timeTaken: "16:9:62",
-        day: 6,
+        day: "Sat",
         entry: "mondays suck and i love lasagne"
         
         
     },{
         timeTaken: "16:9:62",
-        day: 5,
+        day: "Fri",
         entry: "sandwiches really just dont hit the same wihtout a big glass of lovely beer"
         
         
     },{
         timeTaken: "16:9:62",
-        day: 2,
+        day: "Tue",
         entry: "why did i have to wake up"
         
         
     },{
         timeTaken: '16:9:62', 
-        day: 0,
-        entry: ''
+        day: "Sun",
+        entry: 'Marcus smiled at me again today'
     }
 ])
 
