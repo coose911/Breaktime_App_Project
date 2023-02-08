@@ -10,8 +10,17 @@ const MeditativeButton = () => {
         const radioButtons = document.querySelectorAll('[name="meditative-length"]'); 
         const time = getValue(radioButtons)
         navigate("/breathe")
+        startTimer(time)
     }
 
+    const startTimer = (time) => {
+        setTimeout(() => {
+            navigate('/')
+          }, time * 60000)
+
+    }
+
+    
     const getValue = (buttons) => {
         let selectedSize = ''
     
