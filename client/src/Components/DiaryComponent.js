@@ -51,7 +51,6 @@ const DiaryComponent = ({addEntry}) => {
     // State for diary entry input text box:
     const [entry, setEntry] = useState ("")
     const [postToShow, setPostToShow] = useState("")
-    const [allDiaryPosts, setAllDiaryPosts] = useState([])
     
     useEffect(() => {
         getDiaryEntries()
@@ -67,22 +66,21 @@ const DiaryComponent = ({addEntry}) => {
     // To handle the submission of a new entry:
     const handleFormSubmit = (evt) => {
         evt.preventDefault()
-        const entryToSubmit = {entry}
+        let diaryEntry = {timeTaken: 0, day: 0}
+        diaryEntry['entry'] = entry
         // addEntry lives in the same file as diary entry state and is passed down as a prop
-        addEntry(entryToSubmit)
-        setPostToShow(entry)
+        const date = new Date();
+        diaryEntry.timeTaken = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        diaryEntry.day = date.getDay()
+        addEntry(diaryEntry)
+        // sets the diary entry on the hompage to show the newly posted one
+        setPostToShow(diaryEntry)
         setEntry("")
     }
 
     const showRandomPost = (diaryentries) => {
         setPostToShow(diaryentries[Math.floor(Math.random()*diaryentries.length)])
     }
-
-    // Filtering to find the most recent diary entry, then mapping to show it in a list
-    // const mostRecentDiaryEntry = diaryEntries.filter(entry, index => index === 0);
-    // const entryToDisplay = mostRecentDiaryEntry.map((entry) => {
-    //     return <li>{entry.text}</li>
-    // })
 
     return (
         <Bubble>
@@ -99,7 +97,7 @@ const DiaryComponent = ({addEntry}) => {
                 <FontAwesomeIcon icon={faPaperPlane}/>
             </button>
         </form>
-            <LastEntry> {postToShow.entry} </LastEntry>
+            <LastEntry> {postToShow.entry} - {postToShow.timeTaken}</LastEntry>
         </Bubble>
     )
 }

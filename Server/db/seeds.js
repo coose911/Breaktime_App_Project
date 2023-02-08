@@ -6,20 +6,27 @@ db.dropDatabase();
 
 db.diary_entries.insertMany([
     {
-        // title: "I hate mondays",
-        entry: "mondays suck and i love lasagne",
-        date: "1-02-22",
-        time: "18:34"
+        timeTaken: "16:9:62",
+        day: 6,
+        entry: "mondays suck and i love lasagne"
+        
+        
     },{
-        // title: "My head hurts",
-        entry: "sandwiches really just dont hit the same wihtout a big glass of lovely beer",
-        date: "1-02-22",
-        time: "12:02"
+        timeTaken: "16:9:62",
+        day: 5,
+        entry: "sandwiches really just dont hit the same wihtout a big glass of lovely beer"
+        
+        
     },{
-        // title: "",
-        entry: "why did i have to wake up",
-        date: "1-02-22",
-        time: "07:16"
+        timeTaken: "16:9:62",
+        day: 2,
+        entry: "why did i have to wake up"
+        
+        
+    },{
+        timeTaken: '16:9:62', 
+        day: 0,
+        entry: ''
     }
 ])
 
