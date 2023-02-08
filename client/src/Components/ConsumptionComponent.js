@@ -36,6 +36,7 @@ const Bubble = styled.section`
   display: grid;
   grid-template-areas:
     "bars piechart";
+  grid-template-columns: 55% 45%;
 `
 const PieChartContainer = styled.div`
   margin-top: 2em;
@@ -44,9 +45,6 @@ const PieChartContainer = styled.div`
   margin-bottom: 2em;
   width: 50%;
   height: auto;
-  display: flex;
-  align-items: flex-end;
-  /* justify-content: center; */
   grid-area: piechart;
 `
 const ProgressBarsContainer = styled.div`
