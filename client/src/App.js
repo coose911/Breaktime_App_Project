@@ -1,5 +1,6 @@
 import './App.css';
 import Dashboard from './Containers/Dashboard';
+import Breathe from './Components/Breathe';
 import Graphs from './Components/graphPageComponents/Graphs';
 import Diary from './Components/Diary';
 import NavBar from './Components/NavBar';
