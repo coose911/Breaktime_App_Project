@@ -27,8 +27,9 @@ const StyledLink = styled(Link)`
   font-size: 45px;
   margin-top: 80px;
   margin-bottom: -140x;
+  transition: all 0.2s ease-in-out;
   &:hover {
-    font-size: 65px;
+    transform: scale(1.44);
   }
 `;
 
