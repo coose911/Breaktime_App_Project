@@ -68,6 +68,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
   };
 
   const addABreak = (evt) => {
+    evt.preventDefault()
     const timeDate = {timeTaken: 0, day: 0}
     increaseBreakPercent();
     const date = new Date();
@@ -75,6 +76,21 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
     timeDate.day = date.getDay()
     addBreak(timeDate);
   };
+
+  const radioButtonValueBreak = (evt) => {
+    evt.preventDefault()
+    const btn = document.querySelector('#radio-button-submit');        
+    const radioButtons = document.querySelectorAll('[name="break-length"]');
+    
+    let selectedSize;
+    for (const radioButton of radioButtons) {
+      if (radioButton.checked) {
+        selectedSize = radioButton.value;
+        break;
+        }
+      }
+      console.log(selectedSize)
+  }
 
   return (
     <>
@@ -109,7 +125,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
         />
         <br />
         <br />
-        <button type="submit">
+        <button id="radio-button-submit" onClick={radioButtonValueBreak}>
           <FontAwesomeIcon icon={faClockRotateLeft} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
         </button>
       </RadioButtonsContainer>
