@@ -11,7 +11,7 @@ const NavContainer = styled.ul`
 `
 
 const StyledLink = styled(Link)`
-    margin-left: 4.5em;
+    margin-left: 3.5em;
     margin-right: -20px;
     width: 20px;
     border: 30em;
