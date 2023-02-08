@@ -51,6 +51,7 @@ function App() {
               <Route exact path='/' element = {<Dashboard addEntry={addEntry} addBreak={addBreak} addWater={addWater} addCoffee={addCoffee}/>} />
               <Route exact path='/diary' element = {<Diary/>} />
               <Route exact path='/graphs' element = {<Graphs/>} />
+              <Route exact path='/breathe' element = {<Breathe/>} />
             </Routes>
       </Router>
       </AppContainer>

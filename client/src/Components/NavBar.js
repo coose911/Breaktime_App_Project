@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 import {Link} from 'react-router-dom'
-import { faBook, faChartSimple, faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faChartSimple, faHeart, faHouse } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 
 const NavContainer = styled.ul`
@@ -33,12 +33,16 @@ const NavBar = () => {
                     <StyledLink  to='/'>
                         <FontAwesomeIcon icon={faHouse} color='#DBB13C'/>
                     </StyledLink>
+                    <StyledLink  to='/breathe'>
+                        <FontAwesomeIcon icon={faHeart} color='#DBB13C'/>
+                    </StyledLink>
                     <StyledLink to='/diary'>
                         <FontAwesomeIcon icon={faBook} color='#DBB13C'/>
                     </StyledLink>
                     <StyledLink  to='/graphs'>
                         <FontAwesomeIcon icon={faChartSimple} color='#DBB13C'/>
                     </StyledLink>
+
                 </NavContainer>
             </div>
         </>
