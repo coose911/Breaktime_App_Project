@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { getBreakData } from "../helpers/BreaksService";
+import { getBreakData, addBreak } from "../helpers/BreaksService";
 import react, { useState, useEffect } from "react";
 import BreaksProgress from "./BreaksProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClockRotateLeft, faFaceTired, faStopwatch20 } from "@fortawesome/free-solid-svg-icons";
+
 
 
 //solid color background
@@ -62,34 +63,41 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
   const [breakID, setBreakID] = useState("");
   const [percentBreak, setPercentBreak] = useState(0);
 
+
+
   const increaseBreakPercent = () => {
     if (percentBreak + 10 > 100) return;
     setPercentBreak(percentBreak + 10);
   };
 
+
   const addABreak = (evt) => {
     evt.preventDefault()
-    const timeDate = {timeTaken: 0, day: 0}
+    const timeDate = {timeTaken: 0, day: 0, length: 0}
+
     increaseBreakPercent();
+
+    const radioButtons = document.querySelectorAll('[name="break-length"]');
+    
+    timeDate.length = radioButtonValueBreak(radioButtons)
     const date = new Date();
     timeDate.timeTaken = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     timeDate.day = date.getDay()
     addBreak(timeDate);
   };
 
-  const radioButtonValueBreak = (evt) => {
-    evt.preventDefault()
-    const btn = document.querySelector('#radio-button-submit');        
-    const radioButtons = document.querySelectorAll('[name="break-length"]');
-    
+
+  const radioButtonValueBreak = (radios) => {
     let selectedSize;
-    for (const radioButton of radioButtons) {
-      if (radioButton.checked) {
-        selectedSize = radioButton.value;
+    
+    for (const button of radios) {
+      if (button.checked) {
+        selectedSize = button.value;
         break;
-        }
+        }else selectedSize = '5'
       }
-      console.log(selectedSize)
+    return selectedSize
+    
   }
 
   return (
@@ -125,7 +133,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
         />
         <br />
         <br />
-        <button id="radio-button-submit" onClick={radioButtonValueBreak}>
+        <button id="radio-button-submit" onClick={addABreak}>
           <FontAwesomeIcon icon={faClockRotateLeft} id='timer-button' style={{width: '30px', height: '30px', margin:-8}}/>
         </button>
       </RadioButtonsContainer>
