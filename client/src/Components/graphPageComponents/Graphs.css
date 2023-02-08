@@ -1,0 +1,10 @@
+/* .highcharts-color-1 {
+    fill: #DBB13C;
+} */
+/* .highcharts-color-2 {
+    fill: #DBB13C;
+} */
+/* Reset side-effect of setting colored fill */
+.highcharts-data-label-connector {
+    fill: none !important;
+}
