@@ -1,17 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import {
-  faBook,
-  faChartSimple,
-  faHeart,
-  faHouse,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBook, faChartSimple, faHeart, faHouse,} from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
 const NavContainer = styled.ul`
-  display: flex;
-  align-items: flex-end;
+    display: flex;
+    align-items: flex-end;
 `;
 
 const StyledLink = styled(Link)`
@@ -25,33 +20,33 @@ const StyledLink = styled(Link)`
 `
 
 const NavBar = () => {
-  const location = useLocation();
-  return (
+    const location = useLocation();
+    return (
     <>
-      <div>
-        <NavContainer>
-          <StyledLink to="/">
-            <FontAwesomeIcon icon={faHouse} color="#DBB13C" />
-          </StyledLink>
-          {location.pathname !== "/breathe" && (
-            <StyledLink to="/breathe">
-              <FontAwesomeIcon icon={faHeart} color="#DBB13C" />
-            </StyledLink>
-          )}
-          {location.pathname !== "/breathe" && (
-            <StyledLink to="/diary">
-              <FontAwesomeIcon icon={faBook} color="#DBB13C" />
-            </StyledLink>
-          )}
-          {location.pathname !== "/breathe" && (
-            <StyledLink to="/graphs">
-              <FontAwesomeIcon icon={faChartSimple} color="#DBB13C" />
-            </StyledLink>
-          )}
-        </NavContainer>
-      </div>
+        <div>
+            <NavContainer>
+                <StyledLink to="/">
+                    <FontAwesomeIcon icon={faHouse} color="#DBB13C" />
+                </StyledLink>
+                {location.pathname !== "/breathe" && (
+                    <StyledLink to="/breathe">
+                    <FontAwesomeIcon icon={faHeart} color="#DBB13C" />
+                    </StyledLink>
+                )}
+                {location.pathname !== "/breathe" && (
+                    <StyledLink to="/diary">
+                        <FontAwesomeIcon icon={faBook} color="#DBB13C" />
+                    </StyledLink>
+                )}
+                {location.pathname !== "/breathe" && (
+                <StyledLink to="/graphs">
+                    <FontAwesomeIcon icon={faChartSimple} color="#DBB13C" />
+                </StyledLink>
+                )}
+            </NavContainer>
+        </div>
     </>
-  );
+);
 };
 
 export default NavBar;

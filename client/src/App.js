@@ -19,6 +19,7 @@ const AppContainer = styled.div`
   font-family: 'Didact Gothic', sans-serif;
   font-family: 'Hanken Grotesk', sans-serif;
   font-family: 'Quicksand', sans-serif;
+  color: #333;
 `
 
 function App() {
