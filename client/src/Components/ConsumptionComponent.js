@@ -31,7 +31,6 @@ const PieChartContainer = styled.div`
   width: 50%;
   height: auto;
   grid-area: piechart;
-
   backdrop-filter: blur(21px);
   -webkit-backdrop-filter: blur(21px);
   box-shadow: 0 8px 32px 0 rgba(36,148,162,1);
@@ -45,6 +44,7 @@ const ProgressBarsContainer = styled.div`
   grid-template-areas: 
     "coffee" 
     "water" ;
+  padding: 1em;
 `
 const Coffee = styled.div`
   grid-area: coffee;

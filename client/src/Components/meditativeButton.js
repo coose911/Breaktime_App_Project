@@ -39,25 +39,26 @@ const MeditativeButton = () => {
     return (
         <>
             <legend>Meditative minutes:</legend>
-                <label>1 minute</label>
-                    <input
-                        type="radio"
-                        id="1"
-                        name="meditative-length"
-                        value="1"/>
-            <br />
+                <br/>
+                    <label>1 minute</label>
+                        <input
+                            type="radio"
+                            id="1"
+                            name="meditative-length"
+                            value="1"/>
+                <br />
 
-                <label>2 minutes</label>
-                    <input
-                        type="radio"
-                        id="2"
-                        name="meditative-length"
-                        value="2"/>
-            <br/> <br/>
+                    <label>2 minutes</label>
+                        <input
+                            type="radio"
+                            id="2"
+                            name="meditative-length"
+                            value="2"/>
+                <br/> <br/>
 
-            <button onClick={doMedatitiveMomentClick}>
-                <FontAwesomeIcon icon={faOtter} id="meditative-button" style={{width: '30px', height: '30px', margin: '-8px'}}/>
-            </button>
+                <button onClick={doMedatitiveMomentClick}>
+                    <FontAwesomeIcon icon={faOtter} id="meditative-button" style={{width: '30px', height: '30px', margin: '-8px'}}/>
+                </button>
 
         </>
     )
