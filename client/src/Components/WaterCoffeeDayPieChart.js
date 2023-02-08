@@ -25,6 +25,9 @@ const WaterCoffeeDayPieChart = ({waterAmount, coffeeAmount}) => {
             type: 'pie',
             backgroundColor: 'rgba(0, 0, 0, 0)'
         },
+        credits: {
+            enabled: false
+        },
         title: {
             text: 'Coffees and Waters Today',
             align: 'left'
