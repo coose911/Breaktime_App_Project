@@ -95,7 +95,7 @@ const WaterCoffeeGraph = () => {
             name: 'Coffees',
             data: coffeeData.slice(1, 6)
         }]
-    };
+    }};
 
     return (
         <div>
