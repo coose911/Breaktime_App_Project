@@ -38,6 +38,7 @@ const ImageContainer = styled.div`
 
 const NavBar = () => {
   const location = useLocation();
+  
   return (
     <>
       <div>
