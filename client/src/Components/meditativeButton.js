@@ -36,7 +36,6 @@ const MeditativeButton = () => {
         return selectedSize  
     }
 
-
     return (
         <>
         <legend>Meditative minutes:</legend>
