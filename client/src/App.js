@@ -26,7 +26,6 @@ function App() {
   const addEntry = (submittedDiaryEntry) => {
     setDiaryEntry(submittedDiaryEntry)
     postDiaryEntry(submittedDiaryEntry)
-    // setDiaryEntry('')
   }
 
   const addBreak = (timeAndDate) => {

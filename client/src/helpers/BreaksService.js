@@ -5,11 +5,6 @@ export const getBreakData = () => {
     .then(res => res.json())
 }
 
-// export const putBreakData = (number) => {
-//     return fetch(breakURL)
-//     .then(res => res.json())
-    // .then(res.break = number)
-// }
 
 export const postBreakData = (payload) => {
     return fetch(breakURL, {
