@@ -58,7 +58,7 @@ const ProgressContainer = styled.div`
   padding-right: 1em;
 `
 
-const BreaksComponent = ({ breaksTaken, addBreak }) => {
+const BreaksComponent = ({ addBreak }) => {
   
   const [percentBreak, setPercentBreak] = useState(0);
   const [amountBreak, setAmountBreak] = useState(0)
@@ -164,7 +164,7 @@ const BreaksComponent = ({ breaksTaken, addBreak }) => {
         <br/> <br/>
 
         <MeditationButton>
-          <MeditativeButton/>
+          <MeditativeButton addABreak={addABreak}/>
         </MeditationButton>
 
       </RadioButtonsContainer>

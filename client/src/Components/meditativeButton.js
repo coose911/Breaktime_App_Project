@@ -1,9 +1,8 @@
 import { faOtter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
 
-const MeditativeButton = () => {
+const MeditativeButton = ({addABreak}) => {
 
     const navigate = useNavigate()
 
@@ -13,6 +12,7 @@ const MeditativeButton = () => {
         const time = getValue(radioButtons)
         navigate("/breathe")
         startTimer(time)
+        addABreak(evt)
     }
 
     const startTimer = (time) => {
