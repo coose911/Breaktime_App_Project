@@ -72,7 +72,7 @@ const ConsumptionComponent = ({ addWater, addCoffee }) => {
     .then(res => {
       const lengthOfArray = res.length
       setCoffeeAmount(lengthOfArray)
-      if (lengthOfArray > 10) {
+      if (lengthOfArray > 4) {
         setPercentCoffee(100)
       } else setPercentCoffee(lengthOfArray * 25)
     })
