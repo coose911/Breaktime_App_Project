@@ -1,59 +1,63 @@
-cd server.js
-step 1
-npm start
+# BreakTime
 
-# -> App running on port 9000
-You should now be able to navigate to http://localhost:9000 in the browser and our string should be displayed.
+<!-- ![Punk Pints app showing a selected beer, the had list & the want list](src/images/punk-pints.png) -->
 
-We've given ourselves a bit of a problem, however. If we change our code, and refresh the page:
+## The Brief
 
-step 2
-npm install --save-dev nodemon
+Our first group project at CodeClan! Our aim was to create a habit tracking app which would encourage good behaviours with regards to taking breaks during the working day. Users can record waters/coffees drank, and breaks taken, and view weekly summaries of these in charts created using the Highcharts library. There is also a Breathe feature intended to guide the user in a moment of meditation and give a sense of relaxation.
 
-step 3 
-cd ../client
-npm install
-npm start
+**Group Project | Timescale - 6 days**
 
-step 4 
-cd ../server
-npm install --save-dev cors
+## How to Use
+
+On the dashboard: 
+
+1. Click to record a break has been taken, either by clicking on the stressed face, or by selecting a break length and clicking on the clockface.
+2. Select a 1 or 2 minute meditation. This will automatically direct you to the Breathe feature for your selected amount of time. The animation is designed to encourage the user to breath in time with it's movements, to promote relaxation and a sense of calm.
+3. Click to record a coffee or glass of water has been drank. The pie chart updates dynamically to reflect this consumption.
+4. Record how you're currently feeling. Do you feel rested? Has taking more breaks helped with your productivity?
+
+Use the large yellow buttons to navigate between the dashboard, Breathe feature, diary, and graphs pages. The diary page shows a full history of your entries. The graphs page shows a summary of your breaks, and coffee/water consumption accross the week
+
+## Getting Started
+
+### Server
+
+Install server dependencies: <br/>
+`cd server`<br/>
+`npm i` <br/>
+
+Seed the database: <br/>
+`npm ru seeds`<br/>
+
+Run express:<br/>
+`npm run server:dev`<br/>
+
+### Client 
+
+Install client dependencies: <br/>
+`cd ../client`<br/>
+`npm install`<br/>
+
+Run the client:<br/>
+`npm start`<br/>
+
+## Tech Used
+- JavaScript
+- Express.JS
+- React
+- Highcharts JS Library
+- MongoDB
+
+## Contributors
+- Charlotte Broadley ([LinkedIn](https://www.linkedin.com/in/charbroadley/), [GitHub](https://github.com/coose911))
+- Marcus Thompson ([LinkedIn](https://www.linkedin.com/in/marcus-thomson91/), [GitHub](https://github.com/coose911))
+- Daniel Salvatori ([LinkedIn](https://www.linkedin.com/in/daniel-salvatori-698912145/), [GitHub](https://github.com/CrispyBread1))
+- Marcin Egzmont ([GitHub](https://github.com/85Marcin))
 
 
-## AIM
 
-To create a habit tracking app which will encourage good behaviour with regards to taking breaks during the working day, to avoid burn-out and stress. Our target audience is software developers who spend their working days on computers and find it difficult to tear themselves away from the screen.
-
-## MVP
-
-The user will be able to:
-- see how many breaks, glasses of water & cups of coffee they have had in a day
-- add a break, glass of water & cup of coffee
-- write a daily comment about how they are feeling
-- view previous comments and update these
-
-## IDEAS FOR EXTENSIONS 
-
-- select different faces to show mood on diary section.
-- add a random tips and suggestions section
-- have an alert tell you to have a break or say brake is over
-- exercise section
-- fill in an image when drunk all the amount of waters.
-- delete diary entry
-- user can comment on old diary posts with new feelings
-
- ## PIE CHART
-
-source = Highcharts.com
- - head over to highcharts.com for assistance/help if needed
- - set up useEffect to pull the data through for the chart. (to display data)
- - set up a fetch function
- - cd into client - npom install highcharts
- - npm install highcharts-react-official
- - back to vs code and into file
- - import Highcharts from "highcharts"
- - import Highchartsreact from 'highcharts-react-official'
- - head over to highcharts.com for assistance/help if needed
- - add a div and the <Highchart> (in the documentaion on highcharts.com)
- - graph should show now on the web page
- - edit the graph as per preference
+## Changes I'd Like to Make
+- Currently the user can add to the lists before a beer has been selected, this adds an empty item to the list. I'd like to stop them from being able to do this.
+- Once a beer has been added to the list I would like this beer to not be served to the user again.
+- For the app to function well on mobile, seeing as the user will likely be accessing this using their mobile from the pub!
